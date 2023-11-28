@@ -200,6 +200,7 @@ cat1 = Category.create!(
 cat2 = Category.create!(
   name: "Wellbeing"
 )
+
 sub1 = SubCategory.create!(
   name: "Pool",
   category_id: cat2.id
@@ -220,14 +221,22 @@ sub4 = SubCategory.create!(
 service1 = Service.create!(
   description: "Work all day in our amazing rooftop and hi-speed internet",
   price: 40,
-  duration_minutes: 480,
+  duration_minutes: 180,
   user_id: user10.id,
   sub_category_id: sub3.id,
 )
 service2 = Service.create!(
   description: "Take a relaxing day off in our Spa",
   price: 60,
-  duration_minutes: 480,
+  duration_minutes: 180,
   user_id: user8.id,
   sub_category_id: sub2.id
 )
+
+(0..6).each do |day_interval|
+  day = Date.today + day_interval.days
+  (0..2).each do |timeslot_number|
+    start = day.to_datetime + 9.hours + timeslot_number * 180.minutes
+    Timeslot.create!(service: service1, start_at: start, end_at: start + 180.minutes)
+  end
+end
