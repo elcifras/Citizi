@@ -4,16 +4,18 @@
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
 
-// General style
-$font-family-sans-serif: $body-font;
-$headings-font-family:   $headers-font;
-$body-bg:                $light-gray;
+// Font definitions
+$jost-font: 'Jost', sans-serif;
+$inter-font: 'Inter', sans-serif;
+
+// Bootstrap variables
+$font-family-sans-serif: $inter-font; // Set body font to Inter
+$headings-font-family:   $jost-font; // Set headings font to Jost
 $font-size-base:         1rem;
 
 // Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
+$body-color: $blue;
+$primary:    $dark-blue;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
