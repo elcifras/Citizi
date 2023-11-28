@@ -3,5 +3,5 @@ class Service < ApplicationRecord
   belongs_to :user
   has_one :category, through: :sub_category
   has_many :timeslots, dependent: :destroy
-  has_many :services, through: :timeslot
+  has_many :bookings, through: :timeslot
 end
