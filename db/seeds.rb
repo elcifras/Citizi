@@ -179,7 +179,7 @@ user14 = User.create!(
   bio: "Set in Barcelona and with Somorrostro Beach reachable within 2.7 km, ME Barcelona offers concierge services, allergy-free rooms, a terrace, free WiFi and a bar. This 5-star hotel offers a tour desk and luggage storage space. The accommodation provides nightclub and room service",
   address: 'Carrer de Casp 1-13, Eixample, 08010 Barcelona, Spain',
   password: 'password14',
-  phone_number: '655-111-333',
+  phone_number: '655-111-333'
 )
 user15 = User.create!(
   first_name: 'Julieta',
@@ -189,8 +189,8 @@ user15 = User.create!(
   is_hotel: true,
   bio: "Alma Barcelona is set in an attractive building just off Barcelona’s Passeig de Gràcia. It offers a spa, a stylish restaurant with a terrace, and air-conditioned rooms with free Wi-Fi",
   address: 'Mallorca, 269-271, Eixample, 08008 Barcelona, Spain',
-  password: 'password14',
-  phone_number: '655-111-444',
+  password: 'password15',
+  phone_number: '655-111-444'
 )
 
 cat1 = Category.create!(
@@ -202,35 +202,213 @@ cat2 = Category.create!(
 )
 
 sub1 = SubCategory.create!(
-  name: "Pool",
+  name: "Swimming pool",
   category_id: cat2.id
 )
+
 sub2 = SubCategory.create!(
-  name: "Spa",
+  name: "Fitness center",
   category_id: cat2.id
 )
+
 sub3 = SubCategory.create!(
-  name: "Hot-Desk",
+  name: "Massage",
+  category_id: cat2.id
+)
+
+sub4 = SubCategory.create!(
+  name: "Sauna",
+  category_id: cat2.id
+)
+
+sub5 = SubCategory.create!(
+  name: "Lively and animated",
   category_id: cat1.id
 )
-sub4 = SubCategory.create!(
-  name: "Outside",
+
+sub6 = SubCategory.create!(
+  name: "Spaces to focus",
+  category_id: cat1.id
+)
+
+sub7 = SubCategory.create!(
+  name: "Workplaces for foodies",
   category_id: cat1.id
 )
 
 service1 = Service.create!(
-  description: "Work all day in our amazing rooftop and hi-speed internet",
-  price: 40,
+  description: "Dive into luxury at our hotel's swimming pool, a serene oasis nestled amidst lush surroundings. Whether you're seeking a refreshing morning swim or a relaxing afternoon soak, our crystal-clear waters and modern amenities provide the perfect escape.",
+  price: 15,
   duration_minutes: 180,
-  user_id: user10.id,
-  sub_category_id: sub3.id,
+  user_id: user4.id,
+  sub_category_id: sub1.id
 )
 service2 = Service.create!(
-  description: "Take a relaxing day off in our Spa",
-  price: 60,
+  description: "Immerse yourself in tranquility at our hotel's swimming pool, where the gentle ripple of water meets the soothing ambiance of our carefully curated poolside. Surrounded by elegant landscaping, it's the ideal spot to unwind, bask in the sun, or simply enjoy a leisurely swim.",
+  price: 10,
   duration_minutes: 180,
+  user_id: user11.id,
+  sub_category_id: sub1.id
+)
+
+service3 = Service.create!(
+  description: "Experience sophistication by our hotel's contemporary swimming pool. Adorned with sleek design elements and complemented by the latest amenities, our pool invites you to indulge in a stylish escape. Whether you prefer lounging in the sun or taking a dip, this poolside retreat promises a touch of modern luxury.",
+  price: 17,
+  duration_minutes: 180,
+  user_id: user14.id,
+  sub_category_id: sub1.id
+)
+
+service4 = Service.create!(
+  description: "Unleash your vitality at our hotel's fitness center—a compact powerhouse for your active lifestyle. State-of-the-art equipment awaits, providing a quick, invigorating workout to keep you energized during your stay.",
+  price: 12,
+  duration_minutes: 120,
+  user_id: user2.id,
+  sub_category_id: sub2.id
+)
+
+service5 = Service.create!(
+  description: "Elevate your fitness routine in our hotel's sleek fitness center. Thoughtfully designed with the latest gear, it's a stylish space to stay active. Convenient and efficient, ensuring you stay on track with your wellness goals.",
+  price: 15,
+  duration_minutes: 120,
+  user_id: user6.id,
+  sub_category_id: sub2.id
+)
+
+service6 = Service.create!(
+  description: "Our hotel's fitness center is your 24/7 fitness companion. Compact yet comprehensive, it offers a convenient space to break a sweat whenever your schedule allows. Your well-being, your way.",
+  price: 15,
+  duration_minutes: 120,
   user_id: user8.id,
   sub_category_id: sub2.id
+)
+
+service7 = Service.create!(
+  description: "Discover a fitness haven at our hotel's gym—compact, yet complete. Whether you're a morning warrior or a late-night enthusiast, our fitness center welcomes you with modern equipment and a commitment to your well-being.",
+  price: 14,
+  duration_minutes: 120,
+  user_id: user14.id,
+  sub_category_id: sub2.id
+)
+
+service8 = Service.create!(
+  description: "Indulge in blissful relaxation with our hotel's massage service. Let skilled hands melt away tension, transporting you to a state of tranquility. A therapeutic escape within reach.",
+  price: 100,
+  duration_minutes: 60,
+  user_id: user2.id,
+  sub_category_id: sub3.id
+)
+
+service9 = Service.create!(
+  description: "Elevate your stay with our massage service, a serene escape designed to unwind both body and mind. Immerse yourself in a world of gentle touches, ensuring your stay is a rejuvenating experience.",
+  price: 120,
+  duration_minutes: 60,
+  user_id: user10.id,
+  sub_category_id: sub3.id
+)
+
+service10 = Service.create!(
+  description: "Recharge with our on-demand massage service, bringing the spa experience to your room. Expert therapists deliver personalized relaxation, leaving you refreshed and ready to make the most of your stay.",
+  price: 115,
+  duration_minutes: 60,
+  user_id: user13.id,
+  sub_category_id: sub3.id
+)
+
+service11 = Service.create!(
+  description: "Transform your stay into a rejuvenating journey with our hotel's massage service. Tailored to your preferences, it's the perfect way to unwind after a day of exploration. Your well-being, our priority.",
+  price: 90,
+  duration_minutes: 60,
+  user_id: user11.id,
+  sub_category_id: sub3.id
+)
+
+service12 = Service.create!(
+  description: "Step into a world of calming heat, promoting relaxation and wellness. A brief retreat that leaves you refreshed and ready for whatever the day holds.",
+  price: 25,
+  duration_minutes: 60,
+  user_id: user14.id,
+  sub_category_id: sub4.id
+)
+
+service13 = Service.create!(
+  description: "Experience pure relaxation in our hotel's sauna—a haven of warmth and tranquility. Indulge in the soothing embrace of steam, leaving stress behind for a rejuvenating escape.",
+  price: 30,
+  duration_minutes: 60,
+  user_id: user15.id,
+  sub_category_id: sub4.id
+)
+
+service14 = Service.create!(
+  description: "Immerse yourself in the vibrant energy of our hotel's co-working space, where creativity knows no bounds. With dynamic collaboration zones, colorful furnishings, and a constant hum of activity, it's the perfect setting for those who thrive in lively and animated work environments.",
+  price: 10,
+  duration_minutes: 180,
+  user_id: user13.id,
+  sub_category_id: sub5.id
+)
+
+service15 = Service.create!(
+  description: "Step into our hotel's co-working playground, where work meets play in a lively symphony. Dynamic workstations, interactive breakout areas, and a calendar full of networking events create an animated atmosphere that inspires productivity and fosters connections.",
+  price: 10,
+  duration_minutes: 180,
+  user_id: user10.id,
+  sub_category_id: sub5.id
+)
+
+service16 = Service.create!(
+  description: "Join the workspace fiesta at our hotel's co-working spot! Bursting with lively colors, collaborative corners, and an ever-present buzz of conversation, it's a dynamic environment that transforms work into a celebration. Get ready to be inspired and energized.",
+  price: 12,
+  duration_minutes: 180,
+  user_id: user4.id,
+  sub_category_id: sub5.id
+)
+
+service17 = Service.create!(
+  description: "Our co-working space is not just a place to work; it's a carnival of ideas! With lively discussions, spontaneous collaborations, and a backdrop of vibrant decor, this is where innovation thrives. Experience a dynamic work atmosphere that sparks creativity at every turn.",
+  price: 15,
+  duration_minutes: 180,
+  user_id: user14.id,
+  sub_category_id: sub5.id
+)
+
+service18 = Service.create!(
+  description: "Elevate your work experience at our hotel's exclusive co-working space designed for focus and productivity. Quiet corners, ergonomic seating, and high-speed connectivity create a refined atmosphere for executives and business professionals to concentrate on their tasks.",
+  price: 14,
+  duration_minutes: 180,
+  user_id: user10.id,
+  sub_category_id: sub6.id
+)
+
+service19 = Service.create!(
+  description: "Escape the noise and distractions in our hotel's dedicated co-working sanctuary. With a focus on tranquility and efficiency, this space offers private workstations, soundproofing, and minimalist design, providing an ideal setting for focused, uninterrupted work.",
+  price: 12,
+  duration_minutes: 180,
+  user_id: user2.id,
+  sub_category_id: sub6.id
+)
+
+service20 = Service.create!(
+  description: "Unleash your productivity in our hotel's co-working area, tailored for tech-savvy individuals. Equipped with the latest technology, high-speed internet, and ergonomic workstations, it's the perfect environment for focused work, coding, and virtual collaborations.",
+  price: 16,
+  duration_minutes: 180,
+  user_id: user12.id,
+  sub_category_id: sub6.id
+)
+
+service21 = Service.create!(
+  description: "Experience a blend of productivity and pleasure at our hotel's co-working space, where the aroma of freshly brewed coffee mingles with the hum of focused work. Enjoy restaurant-quality meals and craft beverages right at your workspace, turning every break into a culinary delight.",
+  price: 8,
+  duration_minutes: 180,
+  user_id: user8.id,
+  sub_category_id: sub7.id
+)
+
+service22 = Service.create!(
+  description: "Fuel your creativity at our hotel's co-working spot, where the bar is as much a part of the workspace as the desks. Enjoy a vibrant atmosphere, craft beverages, and delectable bites while collaborating with like-minded professionals.",
+  price: 10,
+  duration_minutes: 180,
+  user_id: user4.id,
+  sub_category_id: sub7.id
 )
 
 (0..6).each do |day_interval|
@@ -238,5 +416,40 @@ service2 = Service.create!(
   (0..2).each do |timeslot_number|
     start = day.to_datetime + 9.hours + timeslot_number * 180.minutes
     Timeslot.create!(service: service1, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service2, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service3, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service14, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service15, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service16, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service17, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service18, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service19, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service20, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service21, start_at: start, end_at: start + 180.minutes)
+    Timeslot.create!(service: service22, start_at: start, end_at: start + 180.minutes)
+  end
+end
+
+(0..6).each do |day_interval|
+  day = Date.today + day_interval.days
+  (0..5).each do |timeslot_number|
+    start = day.to_datetime + 8.hours + timeslot_number * 120.minutes
+    Timeslot.create!(service: service4, start_at: start, end_at: start + 120.minutes)
+    Timeslot.create!(service: service5, start_at: start, end_at: start + 120.minutes)
+    Timeslot.create!(service: service6, start_at: start, end_at: start + 120.minutes)
+    Timeslot.create!(service: service7, start_at: start, end_at: start + 120.minutes)
+  end
+end
+
+(0..6).each do |day_interval|
+  day = Date.today + day_interval.days
+  (0..10).each do |timeslot_number|
+    start = day.to_datetime + 9.hours + timeslot_number * 60.minutes
+    Timeslot.create!(service: service8, start_at: start, end_at: start + 60.minutes)
+    Timeslot.create!(service: service9, start_at: start, end_at: start + 60.minutes)
+    Timeslot.create!(service: service10, start_at: start, end_at: start + 60.minutes)
+    Timeslot.create!(service: service11, start_at: start, end_at: start + 60.minutes)
+    Timeslot.create!(service: service12, start_at: start, end_at: start + 60.minutes)
+    Timeslot.create!(service: service13, start_at: start, end_at: start + 60.minutes)
   end
 end
