@@ -1,2 +1,8 @@
 <h1>Services#index</h1>
-<p>Find me in app/views/services/index.html.erb</p>
+<div>
+  <% @services.each do |service| %>
+    <%= service.user.first_name%> <%= service.user.last_name%>
+    <%= service.sub_category.name %>
+    <%= service.user.address %>
+  <% end %>
+</div>
