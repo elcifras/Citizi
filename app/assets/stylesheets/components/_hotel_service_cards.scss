@@ -1,8 +1,33 @@
-// HOTEL SERVICE CARD HERE (INDEX PAGE, SERVICES)
+// ALL SERVICE CARDS ON THE PAGE
+.card-services {
+}
+
+// EACH INDIVIDUAL SERVICE CARD
+.card-service {
+  margin: 20px; /* Adjust margin as needed */
+  flex-shrink: 0;
+  border: none;
+  border-radius: 11px;
+  background-color: $dark-blue;
+  color: $light-gray;
+}
+
+// Body for each service card
+.body-service {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-img-top {
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+
+
+
+
+// Either %, or padding & margin in pixels
 
 // HOTEL SERVICE PROFILE CARD HERE (SHOW PAGE, HOTEL)
-
-// BOOKINGS CARDS:
-// HOTEL SERVICE BOOKING CANCELLED CARD HERE (BOOKINGS)
-// HOTEL SERVICE BOOKING CURRENT CARD HERE (BOOKINGS)
-// HOTEL SERVICE BOOKING PAST CARD HERE (BOOKINGS)
