@@ -14,7 +14,7 @@ $headings-font-family:   $jost-font; // Set headings font to Jost
 $font-size-base:         1rem;
 $card-title-color: $light-gray;
 $card-subtitle-color: $light-gray;
-$card-color: $light-gray;
+$card-color: $dark-blue;
 
 // Colors
 $body-color: $light-gray;
@@ -24,8 +24,8 @@ $danger:     $red;
 $warning:    $orange;
 
 // Buttons & inputs' radius
-$border-radius:    2px;
-$border-radius-lg: 2px;
-$border-radius-sm: 2px;
+$border-radius:    11px;
+$border-radius-lg: 11px;
+$border-radius-sm: 11px;
 
 // Override other variables below!
