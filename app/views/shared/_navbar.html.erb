@@ -1,10 +1,10 @@
 <%# TOP BAR %>
 <% unless params[:controller] == "pages" && params[:action] == "home" || params[:controller] == "services" && params[:action] == "index" %>
 
-
 <nav class="topbar fixed-top topbar-light">
-
-  <i class="fa-solid fa-arrow-left-long topbar-icon"></i>
+  <%= link_to :back, class: "nav-link" do %>
+      <i class="fa-solid fa-arrow-left-long topbar-icon"></i>
+  <% end %>
 
   <h1>
     <%= content_for :navbar_title %>
@@ -15,14 +15,24 @@
 <%# NAV BAR %>
 <nav class="navbar fixed-bottom navbar-light">
 
-  <i class="fa-solid fa-house navbar-icon"></i>
+  <%= link_to root_path, class: "nav-link" do  %>
+    <i class="fa-solid fa-house navbar-icon"></i>
+  <% end %>
 
-  <i class="fa-solid fa-magnifying-glass navbar-icon"></i>
+  <%= link_to services_path, class: "nav-link" do  %>
+    <i class="fa-solid fa-magnifying-glass navbar-icon"></i>
+  <% end %>
 
-  <i class="fas fa-comment-alt navbar-icon"></i>
+<%# PATH NEEDED FOR LIVE CHAT HERE %>
+    <i class="fas fa-comment-alt navbar-icon"></i>
 
-  <i class="fa-solid fa-calendar-days navbar-icon"></i>
+  <%= link_to bookings_path, class: "nav-link" do %>
+    <i class="fa-solid fa-calendar-days navbar-icon"></i>
+  <% end %>
 
-  <i class="fa-solid fa-user navbar-icon"></i>
+
+<%# PATH NEEDED FOR PROFILE/USERS ID HERE %>
+    <i class="fa-solid fa-user navbar-icon"></i>
+
 
 </nav>
