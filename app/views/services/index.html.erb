@@ -1,8 +1,36 @@
-<h1>Services#index</h1>
-<div>
+
+<%# Search & filter needed here %>
+
+<%# Geolocation map needed here %>
+
+<div class="services container">
   <% @services.each do |service| %>
-    <%= service.user.first_name%> <%= service.user.last_name%>
+    <%=link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do%>
+      <div class="card-service" >
+
+    <%= service.user.hotel_name>
     <%= service.sub_category.name %>
     <%= service.user.address %>
   <% end %>
 </div>
+
+
+
+  <% @lessons.each do |lesson| %>
+    <%=link_to lesson_path(lesson), style: "text-decoration: none;", class: "card-lesson-link" do%>
+      <div class="card-lesson" >
+        <%= image_tag lesson.user.avatar_url, alt: "Teacher photo"%>
+        <span class="box-rounded-3">
+          <i class="fa-solid fa-coins"></i>   <%="#{lesson.hourly_rate}€/hour"%>
+        </span>
+        <p><strong><%=lesson.user.first_name%> <%=lesson.user.last_name%></strong></p>
+      <div class="card-lesson-infos">
+        <span><%=lesson.subject%></span> -
+        <span><%=lesson.description%></span>
+      </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<strong></strong>
