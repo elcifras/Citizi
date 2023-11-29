@@ -8,6 +8,7 @@
   flex-shrink: 0;
   border-radius: 11px;
   background-color: $dark-blue;
+  color: $light-gray;
 }
 
 // Body for each service card
@@ -20,11 +21,8 @@
   border-top-right-radius: 11px;
 }
 
-// Font colors
-.card-title,
-.card-text {
-color: $light-gray
-}
+
+
 
 
 // Either %, or padding & margin in pixels
