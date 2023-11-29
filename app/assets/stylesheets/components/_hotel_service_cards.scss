@@ -1,0 +1,32 @@
+// ALL SERVICE CARDS ON THE PAGE
+.card-services {
+}
+
+// EACH INDIVIDUAL SERVICE CARD
+.card-service {
+  margin: 20px; /* Adjust margin as needed */
+  flex-shrink: 0;
+  border-radius: 11px;
+  background-color: $dark-blue;
+}
+
+// Body for each service card
+.body-service {
+  padding: 20px;
+}
+
+.card-img-top {
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+// Font colors
+.card-title,
+.card-text {
+color: $light-gray
+}
+
+
+// Either %, or padding & margin in pixels
+
+// HOTEL SERVICE PROFILE CARD HERE (SHOW PAGE, HOTEL)
