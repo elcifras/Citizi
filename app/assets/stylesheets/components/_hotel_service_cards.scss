@@ -6,13 +6,17 @@
 .card-service {
   margin: 20px; /* Adjust margin as needed */
   flex-shrink: 0;
+  border: none;
   border-radius: 11px;
   background-color: $dark-blue;
+  color: $light-gray;
 }
 
 // Body for each service card
 .body-service {
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-img-top {
@@ -20,11 +24,8 @@
   border-top-right-radius: 11px;
 }
 
-// Font colors
-.card-title,
-.card-text {
-color: $light-gray
-}
+
+
 
 
 // Either %, or padding & margin in pixels
