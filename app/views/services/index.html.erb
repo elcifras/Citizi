@@ -1,9 +1,17 @@
 
 <%# Search & filter needed here %>
+<div class="sort-by">
+  <div class="sort-by-title">
+    <h3>Sort by</h3>
+  </div>
+  <div class="sort-by-buttons">
+    <a href="/services?sort_by=price" class="button-1">Price</a>
+    <a href="/services?sort_by=distance" class="button-1">Distance</a>
+    <a href="/services?sort_by=distance" class="button-1">Rating</a>
+  </div>
+</div>
 
 <%# Geolocation map needed here %>
-
-<%# Cloudinary %>
 
 <div class="card-services">
   <% @services.each do |service| %>
@@ -11,14 +19,30 @@
       <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
         <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
         <div class="card-body body-service">
-        <span class="button-2">
-          </i><%="#{service.price}€"%>
-        </span>
-          <h5 class="card-title"><%= service.user.hotel_name %></h5>
-          <p class="card-text"><%= service.sub_category.name %></p>
-          <p class="card-text"><%= service.user.address %></p>
+          <div class="service-main-info">
+            <h5 class="card-title"><%= service.user.hotel_name %></h5>
+            <p class="card-text"><%= service.sub_category.name %></p>
+            <p class="card-text"><%= service.user.address %></p>
+          </div>
+          <div class="service-secondary-info">
+            <span class="button-2">
+              </i><%="#{service.price}€"%>
+            </span>
+          </div>
         </div>
       <% end %>
     </div>
     <% end %>
 </div>
+
+<%# Cloudinary %>
+
+<%# BELOW IS FOR THE SERVICES CONTROLLER, USING AJAX %>
+<%#
+  if params[:sort_by] == "price"
+      @services = @services.order(params[:sort_by])
+    elsif params[:sort_by] == "distance"
+
+    end %>
+
+<%# "/services?sort_by=price" %>
