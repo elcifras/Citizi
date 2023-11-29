@@ -3,34 +3,17 @@
 
 <%# Geolocation map needed here %>
 
-<div class="services container">
+<%# Cloudinary %>
+
+<div class="card services" style="width: 18rem;">
   <% @services.each do |service| %>
-    <%=link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do%>
-      <div class="card-service" >
-
-    <%= service.user.hotel_name>
-    <%= service.sub_category.name %>
-    <%= service.user.address %>
-  <% end %>
-</div>
-
-
-
-  <% @lessons.each do |lesson| %>
-    <%=link_to lesson_path(lesson), style: "text-decoration: none;", class: "card-lesson-link" do%>
-      <div class="card-lesson" >
-        <%= image_tag lesson.user.avatar_url, alt: "Teacher photo"%>
-        <span class="box-rounded-3">
-          <i class="fa-solid fa-coins"></i>   <%="#{lesson.hourly_rate}€/hour"%>
-        </span>
-        <p><strong><%=lesson.user.first_name%> <%=lesson.user.last_name%></strong></p>
-      <div class="card-lesson-infos">
-        <span><%=lesson.subject%></span> -
-        <span><%=lesson.description%></span>
-      </div>
+    <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
+      <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
+      <div class="card-body">
+        <h5 class="card-title"><%= service.user.hotel_name %></h5>
+        <p class="card-text"><%= service.sub_category.name %></p>
+        <p class="card-text"><%= service.user.address %></p>
       </div>
     <% end %>
   <% end %>
 </div>
-
-<strong></strong>
