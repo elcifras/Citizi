@@ -26,6 +26,8 @@ user1 = User.create!(
   is_hotel: false,
   bio: 'Fitness enthusiast',
   address: 'Carrer Joan guell 89, Barcelona',
+  latitude: 41.380000,
+  longitude: 2.132650,
   password: 'password1',
   phone_number: '655-222-222',
 )
@@ -38,6 +40,8 @@ user2 = User.create!(
   is_hotel: true,
   bio: 'Hotel El Palace Barcelona is located in Eixample District, close to the Ramblas, the main shopping area and Barcelona’s main tourist attractions. It offers a Mayan-style luxury spa. A limousine service with a chauffeur is available on request.',
   address: 'Gran Via de les Corts Catalanes, 668, Eixample, 08010 Barcelona, Spain',
+  latitude: 41.391570,
+  longitude: 2.171570,
   password: 'password2',
   phone_number: '655-333-333',
 )
@@ -49,7 +53,9 @@ user3 =User.create!(
   email: 'charlie@gmail.com',
   is_hotel: false,
   bio: 'Artist',
-  address: '123 Art Street',
+  address: 'C/ del Bruc, 149, 08037 Barcelona',
+  latitude: 41.398760,
+  longitude: 2.163460,
   password: 'password3',
   phone_number: '655-444-444',
 )
@@ -62,6 +68,8 @@ user4 = User.create!(
   is_hotel: true,
   bio: "Located just off Barcelona’s prestigious Passeig de Gràcia Boulevard, this luxury hotel offers city views from its rooftop pool. It also has a unique art collection",
   address: 'Pau Claris, 150, Eixample, 08009 Barcelona, Spain',
+  latitude: 41.394371,
+  longitude: 2.165310,
   password: 'password4',
   phone_number: '655-555-555',
 )
@@ -72,7 +80,9 @@ user5 = User.create!(
   email: 'eva@gmail.com',
   is_hotel: false,
   bio: 'Chef',
-  address: '789 Cooking Lane',
+  address: 'Carrer de Siracusa, 15, 08012 Barcelona',
+  latitude: 41.400950,
+  longitude: 2.159570,
   password: 'password5',
   phone_number: '655-666-666',
 )
@@ -85,6 +95,8 @@ user6 = User.create!(
   is_hotel: true,
   bio: 'Frequently hosting world-famous celebrities, this prestigious hotel is located on Barcelona’s famous Las Ramblas. Le Méridien’s stylish rooms feature flat-screen TVs, a music system and iPod dock',
   address: 'Ramblas, 111, Ciutat Vella, 08002 Barcelona, Spain',
+  latitude: 41.3838156,
+  longitude: 2.170924,
   password: 'password6',
   phone_number: '655-777-777',
 )
@@ -96,7 +108,9 @@ user7 = User.create!(
   email: 'grace@gmail.com',
   is_hotel: false,
   bio: 'Yoga Instructor',
-  address: '456 Zen Avenue',
+  address: 'Carrer del Comte d Urgell, 168, 08036 Barcelona',
+  latitude: 41.3868818,
+  longitude: 2.1528608,
   password: 'password7',
   phone_number: '655-888-888',
 )
@@ -109,8 +123,10 @@ user8 = User.create!(
   is_hotel: true,
   bio: "Located on the fashionable Paseo de Gracia, within 5 minutes’ walk from both Gaudi’s masterpieces Casa Battló and La Pedrera, Monument Hotel offers luxury services including a gourmet restaurant and a spa",
   address: 'Paseo de Gracia, 75, Eixample, 08008 Barcelona, Spain',
+  latitude: 41.3938375,
+  longitude: 2.1621223,
   password: 'password8',
-  phone_number: '655-999-999',
+  phone_number: '655-999-999'
 )
 
 user9 = User.create!(
@@ -120,9 +136,11 @@ user9 = User.create!(
   email: 'ivy@gmail.com',
   is_hotel: false,
   bio: 'Botanist',
-  address: '123 Green Street',
+  address: "Passatge d'Elisabets, 1, 08001 Barcelona",
+  latitude: 41.383549,
+  longitude: 2.1691637,
   password: 'password9',
-  phone_number: '655-000-000',
+  phone_number: '655-000-000'
 )
 
 user10 = User.create!(
@@ -133,6 +151,8 @@ user10 = User.create!(
   is_hotel: true,
   bio: "Set on Barcelona’s fashionable Passeig de Gràcia, the luxurious Mandarin Oriental, Barcelona is within 5 minutes’ walk of Gaudi’s Casa Batlló and La Pedrera. Plaça Catalunya is just a 10-minute walk away. The hotel features a spa, rooftop pool, indoor pool, fitness centre, wonderful city views, and 24-hour room service",
   address: 'Passeig de Gràcia, 38 - 40, Eixample, 08007 Barcelona, Spain',
+  latitude: 41.3913213,
+  longitude: 2.1668109,
   password: 'password10',
   phone_number: '655-111-111',
 )
@@ -144,6 +164,8 @@ user11 = User.create!(
   is_hotel: true,
   bio: "Grand Central Hotel Barcelona is a design hotel offering fantastic views of the Gothic Quarter and Barcelona Cathedral from its rooftop infinity pool. It has stylish rooms and free high-speed WiFi",
   address: 'Via Laietana, 30, Ciutat Vella, 08003 Barcelona, Spain',
+  latitude: 41.3850559,
+  longitude: 2.177794,
   password: 'password11',
   phone_number: '655-111-111',
 )
@@ -155,6 +177,8 @@ user12 = User.create!(
   is_hotel: true,
   bio: "Renaissance Barcelona Hotel is located in the heart of the city, steps away from Passeig de Gràcia, main shopping boulevard, countless bars and restaurants, landmarks and cultural attractions",
   address: 'Pau Clarís, 122, Eixample, 08009 Barcelona, Spain',
+  latitude: 41.3928415,
+  longitude: 2.1673643,
   password: 'password12',
   phone_number: '655-111-222',
 )
@@ -166,6 +190,8 @@ user13 = User.create!(
   is_hotel: true,
   bio: "Sir Victor Hotel, part of Sircle Collection in Barcelona offers stylish accommodation on Passeig de Gràcia, 5 minutes’ walk from Gaudí’s La Pedrera. It features a rooftop swimming pool and a terrace offering excellent views of Barcelona",
   address: 'Rosselló, 265, Eixample, 08008 Barcelona, Spain',
+  latitude: 41.3962021,
+  longitude: 2.1608121,
   password: 'password13',
   phone_number: '655-111-222',
 )
@@ -178,6 +204,8 @@ user14 = User.create!(
   is_hotel: true,
   bio: "Set in Barcelona and with Somorrostro Beach reachable within 2.7 km, ME Barcelona offers concierge services, allergy-free rooms, a terrace, free WiFi and a bar. This 5-star hotel offers a tour desk and luggage storage space. The accommodation provides nightclub and room service",
   address: 'Carrer de Casp 1-13, Eixample, 08010 Barcelona, Spain',
+  latitude: 41.3892184,
+  longitude: 2.170063,
   password: 'password14',
   phone_number: '655-111-333'
 )
@@ -189,6 +217,8 @@ user15 = User.create!(
   is_hotel: true,
   bio: "Alma Barcelona is set in an attractive building just off Barcelona’s Passeig de Gràcia. It offers a spa, a stylish restaurant with a terrace, and air-conditioned rooms with free Wi-Fi",
   address: 'Mallorca, 269-271, Eixample, 08008 Barcelona, Spain',
+  latitude: 41.3945375,
+  longitude: 2.1632263,
   password: 'password15',
   phone_number: '655-111-444'
 )

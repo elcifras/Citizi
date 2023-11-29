@@ -4,6 +4,7 @@
       <h1 class="title">Citizi.</h1>
         <p class="sub-title">Locals Meet Hotels</p>
           <div class="flip-text" data-controller="home">
+          <p>Find the nearest</p>
             <div class="flip-text-holder">
               <span data-home-target="flipText"><em>Spa</em></span>
               <span data-home-target="flipText" class='d-none'><em>Pool</em></span>
@@ -13,9 +14,14 @@
           </div>
       <%= form_with url: services_path, method: :get, class: "d-flex text_and_icon flex-container item-flex" do %>
         <%= text_field_tag :query,
-            params [:query],
+            params[:query],
             class: "form-control",
-            placeholder: "Type a keyword"
+            placeholder: "Spa, massage, coworking... "
+        %>
+        <%= text_field_tag :address,
+            params[:address],
+            class: "form-control",
+            placeholder: "Barcelona "
         %>
         <div class="line"></div>
         <%= button_tag(type: "submit", name: "search", class: "btn flex-item text_and_icon") do %>
