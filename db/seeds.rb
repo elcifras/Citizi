@@ -411,6 +411,8 @@ service22 = Service.create!(
   sub_category_id: sub7.id
 )
 
+
+
 (0..6).each do |day_interval|
   day = Date.today + day_interval.days
   (0..2).each do |timeslot_number|
@@ -452,4 +454,15 @@ end
     Timeslot.create!(service: service12, start_at: start, end_at: start + 60.minutes)
     Timeslot.create!(service: service13, start_at: start, end_at: start + 60.minutes)
   end
+end
+
+10.times do 
+  day = 10
+  Booking.create!(
+  occurs_on: DateTime.new(2023, 11, day, 18, 30, 0),
+  user_id: user1.id,
+  timeslot: Timeslot.all.sample,
+  status: "Confirmed"
+)
+day += 1
 end
