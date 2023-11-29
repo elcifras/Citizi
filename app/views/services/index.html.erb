@@ -5,15 +5,20 @@
 
 <%# Cloudinary %>
 
-<div class="card services" style="width: 18rem;">
+<div class="card-services">
   <% @services.each do |service| %>
-    <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
-      <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
-      <div class="card-body">
-        <h5 class="card-title"><%= service.user.hotel_name %></h5>
-        <p class="card-text"><%= service.sub_category.name %></p>
-        <p class="card-text"><%= service.user.address %></p>
-      </div>
+    <div class="card card-service">
+      <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
+        <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
+        <div class="card-body body-service">
+        <span class="box-rounded-3">
+          <i class="fa-solid fa-coins"></i><%="#{service.price}€"%>
+        </span>
+          <h5 class="card-title"><%= service.user.hotel_name %></h5>
+          <p class="card-text"><%= service.sub_category.name %></p>
+          <p class="card-text"><%= service.user.address %></p>
+        </div>
+      <% end %>
+    </div>
     <% end %>
-  <% end %>
 </div>
