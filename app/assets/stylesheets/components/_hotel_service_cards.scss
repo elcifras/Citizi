@@ -1,7 +1,16 @@
+// SORT BY
+.sort-by-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 11px;
+  color: $light-gray;
+}
+
 // ALL SERVICE CARDS ON THE PAGE
 .card-services {
 }
-
 // EACH INDIVIDUAL SERVICE CARD
 .card-service {
   margin: 20px; /* Adjust margin as needed */
