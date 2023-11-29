@@ -1,9 +1,11 @@
 <%# TOP BAR %>
+<% unless params[:controller] == "pages" && params[:action] == "home" %>
 <nav class="topbar fixed-top topbar-light">
 
   <i class="fa-solid fa-arrow-left-long topbar-icon"></i>
 
 </nav>
+<% end %>
 
 
 <%# NAV BAR %>
