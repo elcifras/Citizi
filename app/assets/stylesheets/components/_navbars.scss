@@ -8,12 +8,13 @@
   background: $blue;
   width: 100vw;
   padding: 16px 24px;
+  margin-bottom: 5px;
 }
 
 .topbar-icon {
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   color: $light-gray;
   height: 24px;
   width: 24px;
@@ -49,4 +50,8 @@
   height: 24px;
   width: 24px;
   font-size: x-large;
+}
+
+.h1 {
+  text-justify: left;
 }

@@ -1,0 +1,57 @@
+.booking-container {
+  justify-content: center;
+  display: flex;
+}
+.booking-card {
+  justify-content: center;
+  width: 342px;
+  height: 379px;
+  background: #202834;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+.booking-card-img {
+  width: 342px;
+  height: 187.45px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.card-body {
+  margin: 10px 10px 10px 10px;
+  height: auto;
+}
+.info {
+  margin-left: 10px;
+}
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px 10px auto;
+}
+.price-tag {
+  justify-content: center;
+}
+.hotel-name {
+  margin: 10px auto 10px auto;
+}
+.service-name .date-time {
+  margin: 5px auto 5px auto;
+}
+.call-to-action {
+  margin: 10px 10px 10px 10px;
+  justify-content: space-evenly;
+  display: flex;
+  font-size:x-large;
+}
+.card-footer {
+  margin: 20px 10px 10px 10px;
+}
+.div-line {
+  margin: 20px;
+  width: 291px;
+  height: 1px;
+  margin-inline: 10px;
+  background: #C4C4C4;
+}
