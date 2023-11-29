@@ -1,5 +1,7 @@
 <%# TOP BAR %>
-<% unless params[:controller] == "pages" && params[:action] == "home" %>
+<% unless params[:controller] == "pages" && params[:action] == "home" || params[:controller] == "services" && params[:action] == "index" %>
+
+
 <nav class="topbar fixed-top topbar-light">
 
   <i class="fa-solid fa-arrow-left-long topbar-icon"></i>
