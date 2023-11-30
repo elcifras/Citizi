@@ -1,9 +1,37 @@
-.spanish-patio {
-  max-width: 45vh; // Adjust as needed
-  height: auto;   // Maintain aspect ratio
-  display: block; // Remove any extra spacing around the image
-  margin-bottom: 0;// Add spacing below the image
-  padding: 0;
+.banner {
+  // max-width: 45vh; // Adjust as needed
+  // height: auto;   // Maintain aspect ratio
+  // display: block; // Remove any extra spacing around the image
+  // margin-bottom: 0;// Add spacing below the image
+  // padding: 0;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  margin-bottom: 15px;
 }
 
-// Add your other styles here
+.banner h2 {
+  text-align: center;
+}
+
+.card-login {
+  margin: 20px;
+  border-radius: 11px;
+  padding: 20px;
+  background-color: $dark-blue;
+  color: $light-gray;
+}
+
+.buttons {
+  margin: 20px;
+  padding: 20px;
+  .button-1 {
+    width: 100%;
+  }
+}
+.button-2 {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
