@@ -14,10 +14,15 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
+    const map = this.map
+    this.map.on('load', function() {
+        map.resize();
+    });
   
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
   }
+
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()

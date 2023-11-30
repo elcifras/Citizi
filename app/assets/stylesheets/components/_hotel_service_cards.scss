@@ -130,6 +130,29 @@
 
 }
 
+.service-list-map-container {
+  position: relative;
+}
+
+.services-map {
+  top: 160px;
+  position: fixed;
+  transition: 0.5s transform ease;
+}
+
+.card-services {
+  transition: 0.5s transform ease;
+
+}
+
+.slide-right {
+  transform: translateX(100vw);
+}
+
+.slide-left {
+  transform: translateX(-100vw);
+}
+
 // Either %, or padding & margin in pixels
 
 // HOTEL SERVICE PROFILE CARD HERE (SHOW PAGE, HOTEL)

@@ -25,35 +25,37 @@
     </div>
 
     <%# Geolocation map needed here %>
-
-    <div class="card-services" data-map-toggle-target="list">
-      <% @services.each do |service| %>
-        <div class="card card-service">
-          <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
-            <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
-            <div class="card-body body-service">
-              <div class="service-main-info">
-                <h5 class="card-title"><%= service.user.hotel_name %></h5>
-                <p class="card-text"><%= service.sub_category.name %></p>
-                <p class="card-text"><%= service.user.address %></p>
+    <div class="service-list-map-container">
+      <div class="card-services" data-map-toggle-target="list">
+        <% @services.each do |service| %>
+          <div class="card card-service">
+            <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
+              <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
+              <div class="card-body body-service">
+                <div class="service-main-info">
+                  <h5 class="card-title"><%= service.user.hotel_name %></h5>
+                  <p class="card-text"><%= service.sub_category.name %></p>
+                  <p class="card-text"><%= service.user.address %></p>
+                </div>
+                <div class="service-secondary-info">
+                  <span class="button-2">
+                    <%="#{service.price}€"%>
+                  </span>
+                </div>
               </div>
-              <div class="service-secondary-info">
-                <span class="button-2">
-                  <%="#{service.price}€"%>
-                </span>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="d-none services-maps" data-map-toggle-target="map">
-      <div style="width: 100%; height: 100vh;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            <% end %>
+          </div>
+        <% end %>
       </div>
+
+      <div class="services-map slide-right" style="width: 100vw;"; data-map-toggle-target="map">
+        <div style="width: 100vw; height: 100vh;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+
     </div>
   </div>
 <%# Cloudinary %>

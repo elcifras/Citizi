@@ -10,7 +10,7 @@ export default class extends Controller {
   fire() {
     console.log("Stwrggergdf");
     console.log(this.listTarget)
-    this.listTarget.classList.toggle("d-none")
-    this.mapTarget.classList.toggle("d-none")
+    this.mapTarget.classList.toggle("slide-right")
+    this.listTarget.classList.toggle("slide-left")
   }
 }
