@@ -10,6 +10,13 @@ class ServicesController < ApplicationController
       @near_users_ids = User.is_hotel.near(params[:address], 5, order: "").ids
       @services = @services.where(user_id: @near_users_ids)
     end
+
+    @markers = @services.map do |service|
+      {
+        lat: service.user.latitude,
+        lng: service.user.longitude
+      }
+    end
   end
 
   def show
