@@ -1,46 +1,69 @@
-
-<%# Search & filter needed here %>
-<div class="sort-by">
-  <div class="sort-by-buttons">
-    <a href="/services?sort_by=recommended" class="button-1">Sort by</a>
-    <a href="/services?sort_by=price" class="button-1">Price</a>
-    <a href="/services?sort_by=distance" class="button-1">Distance</a>
-    <a href="/services?sort_by=distance" class="button-1">Rating</a>
-  </div>
-</div>
-
-<%# Geolocation map needed here %>
-
-<div class="card-services">
-  <% @services.each do |service| %>
-    <div class="card card-service">
-      <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
-        <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
-        <div class="card-body body-service">
-          <div class="service-main-info">
-            <h5 class="card-title"><%= service.user.hotel_name %></h5>
-            <p class="card-text"><%= service.sub_category.name %></p>
-            <p class="card-text"><%= service.user.address %></p>
-          </div>
-          <div class="service-secondary-info">
-            <span class="button-2">
-              </i><%="#{service.price}€"%>
-            </span>
-          </div>
-        </div>
-      <% end %>
-    </div>
+ <% content_for :navbar_title do %>
+    All Services
   <% end %>
-</div>
+  <%= content_for :navbar_icons do %>
+    <label class="toggle">
+      <input class="toggle-input" data-action="click->map-toggle#fire" type="checkbox" />
+      <span class="toggle-label"></span>
+      <span class="toggle-handle"></span>
+      <div class="toggle-icons-container">
+        <i class="fa-solid fa-list"></i>
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+    </label>
+  <% end %>
 
+  <div class="service-container mt-3">
+    <%# Search & filter needed here %>
+    <div class="sort-by">
+      <div class="sort-by-buttons">
+        <a href="/services?sort_by=recommended" class="button-1">Sort by</a>
+        <a href="/services?sort_by=price" class="button-1">Price</a>
+        <a href="/services?sort_by=distance" class="button-1">Distance</a>
+        <a href="/services?sort_by=distance" class="button-1">Rating</a>
+      </div>
+    </div>
+
+    <%# Geolocation map needed here %>
+    <div class="service-list-map-container">
+      <div class="card-services" data-map-toggle-target="list">
+        <% @services.each do |service| %>
+          <div class="card card-service">
+            <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
+              <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
+              <div class="card-body body-service">
+                <div class="service-main-info">
+                  <h5 class="card-title"><%= service.user.hotel_name %></h5>
+                  <p class="card-text"><%= service.sub_category.name %></p>
+                  <p class="card-text"><%= service.user.address %></p>
+                </div>
+                <div class="service-secondary-info">
+                  <span class="button-2">
+                    <%="#{service.price}€"%>
+                  </span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="services-map slide-right" style="width: 100vw;"; data-map-toggle-target="map">
+        <div style="width: 100vw; height: 100vh;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+
+    </div>
+  </div>
 <%# Cloudinary %>
-
 <%# BELOW IS FOR THE SERVICES CONTROLLER, USING AJAX %>
 <%#
   if params[:sort_by] == "price"
       @services = @services.order(params[:sort_by])
-    elsif params[:sort_by] == "distance"
+  elsif params[:sort_by] == "distance"
 
-    end %>
-
+  end %>
 <%# "/services?sort_by=price" %>
