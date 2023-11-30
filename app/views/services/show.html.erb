@@ -29,21 +29,27 @@
 </div>
 
 <%# HOTEL SERVICE CARD %>
-  <div class="card card-service">
-    <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
-    <div class="card-body body-service">
-      <div class="service-main-info">
-        <h5 class="card-title"><%= service.user.hotel_name %></h5>
-        <p class="card-text"><%= service.sub_category.name %></p>
-        <p class="card-text"><%= service.user.address %></p>
-      </div>
-      <div class="service-secondary-info">
+<div class="card card-service-show">
+  <div class="card-body body-service">
+    <div class="service-secondary-info">
+      <!-- Flex container for title and price -->
+      <div class="title-price-container">
+        <h5 class="card-title"><%= @service.user.hotel_name %></h5>
         <span class="button-2">
-          </i><%="#{service.price}€"%>
+          </i><%="#{@service.price}€"%>
         </span>
+      </div>
+      <!-- Flex container for main info -->
+      <div class="service-main-info">
+        <p class="card-text"><%= @service.sub_category.name %></p>
+        <p class="card-text"><%= @service.description %></p>
+    <div class="divider">
       </div>
     </div>
   </div>
+  </div>
+</div>
+
 
 <%# REVIEWS CARD %>
 
