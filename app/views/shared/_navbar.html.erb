@@ -1,21 +1,27 @@
 <%# TOP BAR %>
 <% unless params[:controller] == "pages" && params[:action] == "home" || params[:controller] == "services" && params[:action] == "index" %>
 
-<nav class="topbar fixed-top topbar-light">
-  <%= link_to :back, class: "nav-link" do %>
-      <i class="fa-solid fa-arrow-left-long topbar-icon"></i>
-  <% end %>
+  <nav class="topbar fixed-top topbar-light">
+    <%= link_to :back, class: "nav-link" do %>
+      <i class="fa-solid fa-arrow-left topbar-arrow"></i>
+    <% end %>
 
-  <h1>
-    <%= content_for :navbar_title %>
-  </h1>
-  <div class="nav-icons"> <%= content_for :navbar_icons %> </div>
-</nav>
+    <h1>
+      <%= content_for :navbar_title %>
+    </h1>
+
+    <% if params[:controller] == "services" && params[:action] == "show" %>
+      <div class="topbar-icons">
+        <i class="fa-regular fa-share-from-square topbar-share"></i>
+        <i class="fa-regular fa-heart topbar-heart"></i>
+      </div>
+    <% end %>
+
+  </nav>
 <% end %>
 
 <%# NAV BAR %>
 <nav class="navbar fixed-bottom navbar-light">
-
   <%= link_to root_path, class: "nav-link" do  %>
     <i class="fa-solid fa-house navbar-icon"></i>
   <% end %>
@@ -24,16 +30,16 @@
     <i class="fa-solid fa-magnifying-glass navbar-icon"></i>
   <% end %>
 
-<%# PATH NEEDED FOR LIVE CHAT HERE %>
-    <i class="fas fa-comment-alt navbar-icon"></i>
+  <%# PATH NEEDED FOR LIVE CHAT HERE %>
+  <i class="fas fa-comment-alt navbar-icon"></i>
 
   <%= link_to bookings_path, class: "nav-link" do %>
     <i class="fa-solid fa-calendar-days navbar-icon"></i>
   <% end %>
 
+  <%# PATH NEEDED FOR PROFILE/USERS ID HERE %>
+  <i class="fa-solid fa-user navbar-icon"></i>
 
-<%# PATH NEEDED FOR PROFILE/USERS ID HERE %>
-    <i class="fa-solid fa-user navbar-icon"></i>
-
+  <%# Additional icons for services/show page %>
 
 </nav>
