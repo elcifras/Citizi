@@ -3,8 +3,10 @@
 // e.g. here are the ones you can override for the navbar https://getbootstrap.com/docs/5.2/components/navbar/#sass-variables
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter&family=Jost:wght@500&display=swap');
 
-// Font definitions
+  // Font definitions
 $jost-font: 'Jost', sans-serif;
 $inter-font: 'Inter', sans-serif;
 
@@ -24,8 +26,8 @@ $danger:     $red;
 $warning:    $orange;
 
 // Buttons & inputs' radius
-$border-radius:    2px;
-$border-radius-lg: 2px;
-$border-radius-sm: 2px;
+$border-radius:    11px;
+$border-radius-lg: 11px;
+$border-radius-sm: 11px;
 
 // Override other variables below!

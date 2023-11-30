@@ -1,14 +1,16 @@
 .booking-container {
   justify-content: center;
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 .booking-card {
   justify-content: center;
   width: 342px;
   height: 379px;
   background: #202834;
-  border-top-left-radius: 11px;
-  border-top-right-radius: 11px;
+  border-radius: 14px;
 }
 
 .booking-card-img {
@@ -28,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 10px 10px auto;
+  margin: 10px 20px 10px auto;
 }
 .price-tag {
   justify-content: center;

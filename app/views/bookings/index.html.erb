@@ -2,27 +2,31 @@
   <% content_for :navbar_title do %>
     All My Bookings
   <% end %>
-  <%= @bookings.each do |booking| %>
-    <%# <%=link_to booking_path(booking), style: "text-decoration: none;" do%>
-    <div class="booking-card mt-3"> 
-        <img class="booking-card-img" src="https://via.placeholder.com/342x187">
-      <div class="card-body"> 
-        <div class="info-container">
-          <div class="info">
-            <div class="hotel-name"><%= booking.user.hotel_name%></div>
-            <div class="service-name"><%= booking.service.sub_category.name%></div>
-            <div class="date-time"><%= booking.timeslot.star_time%></div>
+
+  <% @bookings.each do |booking| %>
+      <div class="booking-card mt-3"> 
+        <img class="booking-card-img" src="https://via.placeholder.com/342x187" alt="Booking Image">
+        <div class="card-body"> 
+          <div class="info-container">
+            <div class="info">
+              <div class="hotel-name"><%= booking.service.user.hotel_name %></div>
+              <div class="service-name"><%= booking.service.sub_category.name %></div>
+              <div class="date-time"><%= booking.timeslot.start_at.strftime("%A, %B %e, %Y") %></div>
+            </div>
+            <div class="price-tag"><%= "#{booking.service.price} €" %></div>
           </div>
-        <div class="info-container"> 
-          <div class="price-tag"><%="#{booking.timeslot.price} €"%></div> </div>
-        </div> 
+
+ 
+
           <div class="div-line"></div>
-        <div class="card-footer"> 
-        <span class="call-to-action"> <i class="fa-regular fa-comments"></i>
-          <%# <div class="div-line"></div> %>
-        <i class="fa-solid fa-share"></i> </span>
+
+          <div class="card-footer"> 
+            <span class="call-to-action"> 
+              <i class="fa-regular fa-comments"></i>
+              <i class="fa-solid fa-share"></i>
+            </span>
+          </div>
         </div> 
       </div>
-      <% end %>
-    </div>
+    <% end %>
 </div>
