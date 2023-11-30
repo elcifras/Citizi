@@ -1,4 +1,6 @@
-// SORT BY
+// INDEX, SERVICES PAGE
+
+// Sort by
 .sort-by-buttons {
   display: flex;
   justify-content: space-between;
@@ -8,12 +10,12 @@
   color: $light-gray;
 }
 
-// ALL SERVICE CARDS ON THE PAGE
+// All service cards
 .card-services {
 }
-// EACH INDIVIDUAL SERVICE CARD
+// Each individual service card
 .card-service {
-  margin: 20px; /* Adjust margin as needed */
+  margin: 20px;
   flex-shrink: 0;
   border: none;
   border-radius: 11px;
@@ -33,10 +35,43 @@
   border-top-right-radius: 11px;
 }
 
+// SHOW PAGE
 
+// Service show card
+.card-service-show {
+  margin: 20px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 11px;
+  background-color: $dark-blue;
+  color: $light-gray;
+}
 
+// Body for service show card
+.title-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.title-price-container h5 {
+  margin-right: 10px;
+}
 
-// Either %, or padding & margin in pixels
+.divider{
+  height: 1px;
+  content: "";
+  margin-inline: 0px;
+  margin-bottom: 5px;
+  background-color: $white;
+}
 
-// HOTEL SERVICE PROFILE CARD HERE (SHOW PAGE, HOTEL)
+// REVIEWS CARD
+.card-reviews {
+  margin: 20px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 11px;
+  background-color: $dark-blue;
+  color: $light-gray;
+}

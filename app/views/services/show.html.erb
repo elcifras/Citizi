@@ -29,22 +29,52 @@
 </div>
 
 <%# HOTEL SERVICE CARD %>
-  <div class="card card-service">
-    <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
-    <div class="card-body body-service">
-      <div class="service-main-info">
-        <h5 class="card-title"><%= service.user.hotel_name %></h5>
-        <p class="card-text"><%= service.sub_category.name %></p>
-        <p class="card-text"><%= service.user.address %></p>
-      </div>
-      <div class="service-secondary-info">
+<div class="card card-service-show">
+  <div class="card-body body-service">
+    <div class="service-secondary-info">
+      <!-- Flex container for title and price -->
+      <div class="title-price-container">
+        <h5 class="card-title"><%= @service.user.hotel_name %></h5>
         <span class="button-2">
-          </i><%="#{service.price}€"%>
+          </i><%="#{@service.price}€"%>
         </span>
+      </div>
+      <!-- Flex container for main info -->
+      <div class="service-main-info">
+        <p class="card-text"><%= @service.sub_category.name %></p>
+        <p class="card-text"><%= @service.description %></p>
+        <div class="divider"></div>
+          <div class="other-services">
+            <p>Other Services</p>
+              <button class="button-3">Gym</button>
+              <button class="button-3">Pool</button>
+              <button class="button-3">Free Wifi</button>
+          </div>
       </div>
     </div>
   </div>
+</div>
 
 <%# REVIEWS CARD %>
+<div class="card card-reviews">
+  <div class="card-body body-service">
+      <div class="title-reviews-container">
+        <h5 class="card-title">Reviews</h5>
+      </div>
+
+      <div class="rating">
+        <p class="card-text">4.9 ★</p>
+      </div>
+      <div class="reviews">
+        <p class="review-1">I loved it. Will book again        ★★★★★</p>
+        <div class="divider"></div>
+        <p class="review-2">Beautiful hotel but disappointing service ★★★</p>
+        <div class="divider"></div>
+      </div>
+  </div>
+</div>
+
+
+
 
 <%# BOOK NOW BUTTON,CHANGE TO POP UP LATER %>
