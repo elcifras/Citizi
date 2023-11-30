@@ -4,6 +4,7 @@ class Service < ApplicationRecord
   has_one :category, through: :sub_category
   has_many :timeslots, dependent: :destroy
   has_many :bookings, through: :timeslot
+  has_many_attached :photos
 
   include PgSearch::Model
   pg_search_scope :global_search,
