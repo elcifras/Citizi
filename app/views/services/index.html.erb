@@ -30,7 +30,7 @@
         <% @services.each do |service| %>
           <div class="card card-service">
             <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
-              <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" alt="Service card">
+              <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
               <div class="card-body body-service">
                 <div class="service-main-info">
                   <h5 class="card-title"><%= service.user.hotel_name %></h5>

@@ -33,6 +33,8 @@
 .card-img-top {
   border-top-left-radius: 11px;
   border-top-right-radius: 11px;
+  object-fit: cover;
+  height: 300px;
 }
 .toggle {
   position: relative;
