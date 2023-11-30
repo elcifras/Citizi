@@ -1,12 +1,12 @@
 <div class="booking-container mt-3">
   <% content_for :navbar_title do %>
-    All My Bookings
+    Upcoming bookings
   <% end %>
 
   <% @bookings.each do |booking| %>
-      <div class="booking-card mt-3"> 
+      <div class="booking-card mt-3">
         <img class="booking-card-img" src="https://via.placeholder.com/342x187" alt="Booking Image">
-        <div class="card-body"> 
+        <div class="card-body">
           <div class="info-container">
             <div class="info">
               <div class="hotel-name"><%= booking.service.user.hotel_name %></div>
@@ -16,17 +16,17 @@
             <div class="price-tag"><%= "#{booking.service.price} €" %></div>
           </div>
 
- 
+
 
           <div class="div-line"></div>
 
-          <div class="card-footer"> 
-            <span class="call-to-action"> 
+          <div class="card-footer">
+            <span class="call-to-action">
               <i class="fa-regular fa-comments"></i>
               <i class="fa-solid fa-share"></i>
             </span>
           </div>
-        </div> 
+        </div>
       </div>
     <% end %>
 </div>
