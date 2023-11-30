@@ -15,7 +15,7 @@
 }
 // Each individual service card
 .card-service {
-  margin: 20px; /* Adjust margin as needed */
+  margin: 20px;
   flex-shrink: 0;
   border: none;
   border-radius: 11px;
@@ -34,7 +34,6 @@
   border-top-left-radius: 11px;
   border-top-right-radius: 11px;
 }
-
 
 // SHOW PAGE
 
@@ -63,5 +62,16 @@
   height: 1px;
   content: "";
   margin-inline: 0px;
+  margin-bottom: 5px;
   background-color: $white;
+}
+
+// REVIEWS CARD
+.card-reviews {
+  margin: 20px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 11px;
+  background-color: $dark-blue;
+  color: $light-gray;
 }
