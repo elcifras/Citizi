@@ -14,5 +14,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    @booking = Booking.new
+    @timeslots = @service.timeslots.where("DATE(start_at) = ?", Date.current)    # Not correct, currently includes yesterday
   end
 end
