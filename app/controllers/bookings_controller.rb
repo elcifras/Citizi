@@ -3,17 +3,20 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, only: %i[create index]
 
   def index
-    if current_user.is_hotel
-      @bookings = current_user.accepted_bookings
-    else
-      @bookings = current_user.bookings
-      # @markers = @bookings.geocoded.map do |booking|
-      #   {
-      #     lat: booking.latitude,
-      #     lng: booking.longitude
-      #   }
-      # end
-    end
+    # if current_user.is_hotel
+    #   @bookings = current_user.accepted_bookings
+    # else
+    #   @bookings = current_user.bookings
+    #   @markers = @bookings.geocoded.map do |booking|
+    #     {
+    #       lat: booking.latitude,
+    #       lng: booking.longitude
+    #     }
+    #   end
+    # end
+    @active_bookings = current_user.bookings.where(status: "Confirmed").select{ |booking| booking.occurs_on > DateTime.yesterday}
+    @past_bookings = current_user.bookings.select{ |booking| booking.occurs_on < DateTime.now }
+    @cancelled_bookings = current_user.bookings.where(status: "Cancelled")
   end
 
   def create
@@ -32,13 +35,15 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy
+  def update
     @booking = Booking.find(params[:id])
-    if @booking.destroy
-      redirect_to bookings_path, notice: "Booking deleted"
-    else
-      redirect_to bookings_path, status: :unprocessable_entity, notice: "Booking not deleted"
-    end
+    #if @booking.destroy
+    #  redirect_to bookings_path, notice: "Booking deleted"
+    #else
+    #  redirect_to bookings_path, status: :unprocessable_entity, notice: "Booking not deleted"
+    #end
+    @booking.update(status: "Cancelled")
+    redirect_to bookings_path
   end
 
   private
