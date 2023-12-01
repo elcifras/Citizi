@@ -17,7 +17,7 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
-    <div class="<%= "app-container" unless current_page?(controller: :pages, action: :home) %>">
+    <div class="<%= "app-container" unless controller_name == "pages" && action_name == "home" %>">
       <%= yield %>
     </div>
   </body>
