@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
       @booking = Booking.new(booking_params)
       @booking.user = current_user
       @booking.timeslot = Timeslot.find(params[:booking][:timeslot_id])
+      @booking.occurs_on ||= @booking.timeslot.start_at
       @booking.status = "Confirmed"
       if @booking.save
         redirect_to bookings_path, notice: "Booking created"
