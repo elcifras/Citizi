@@ -1,0 +1,20 @@
+.timeslots-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.timeslots-radio {
+  display: none;
+}
+
+.timeslot-card:hover {
+  background-color: #f0f0f0;
+}
+
+.timeslot-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
