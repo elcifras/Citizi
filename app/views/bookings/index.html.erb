@@ -5,7 +5,7 @@
 
   <% @bookings.each do |booking| %>
       <div class="booking-card mt-3">
-        <%= cl_image_tag service.photos.first.key, class: booking-card-img %>
+        <%= cl_image_tag booking.service.photos.first.key, class: booking-card-img %>
         <div class="card-body">
           <div class="info-container">
             <div class="info">
