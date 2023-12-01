@@ -7,12 +7,12 @@ class BookingsController < ApplicationController
       @bookings = current_user.accepted_bookings
     else
       @bookings = current_user.bookings
-      @markers = @bookings.geocoded.map do |booking|
-        {
-          lat: booking.latitude,
-          lng: booking.longitude
-        }
-      end
+      # @markers = @bookings.geocoded.map do |booking|
+      #   {
+      #     lat: booking.latitude,
+      #     lng: booking.longitude
+      #   }
+      # end
     end
   end
 
