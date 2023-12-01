@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_service, only: %i[create]
   before_action :authenticate_user!, only: %i[create index]
-  
+
   def index
     if current_user.is_hotel
       @bookings = current_user.accepted_bookings
@@ -20,12 +20,12 @@ class BookingsController < ApplicationController
     unless current_user.is_hotel
       @booking = Booking.new(booking_params)
       @booking.user = current_user
-      @booking.timeslot = Timeslot.find(params[:timeslot_id]) # missing the front end to b able to select a tiemslot
+      @booking.timeslot = Timeslot.find(params[:booking][:timeslot_id]) # missing the front end to b able to select a tiemslot
       @booking.status = "Confirmed"
       if @booking.save
         redirect_to bookings_path, notice: "Booking created"
       else
-        redirect_to service_path(@service), notice: "Problem to book"
+        redirect_to service_path(@service), notice: "Problem booking"
       end
     else
       redirect_to bookings_path, notice: "You can not book"
@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
   private
 
   def set_service
-    @service = service.find(params[:service_id])
+    @service = Service.find(params[:service_id])
   end
 
   def booking_params

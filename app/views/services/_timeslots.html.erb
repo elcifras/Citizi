@@ -1,0 +1,12 @@
+<div class="timeslot-cards">
+    <% timeslots.each do |timeslot| %>
+      <div class="timeslot-card">
+        <%= radio_button_tag 'booking[timeslot_id]', timeslot.id, false, id: "timeslot_#{timeslot.id}", class: "timeslot-radio", hidden: true %>
+        <%= label_tag "timeslot_#{timeslot.id}" do %>
+          <div class="card-content">
+            <%= timeslot.start_at.strftime("%Y-%m-%d %H:%M") %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+</div>
