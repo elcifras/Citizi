@@ -8,7 +8,7 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-  
+
     <div class="carousel-item active">
       <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" class="d-block w-100" alt="Service Card">
     </div>
@@ -75,14 +75,9 @@
   </div>
 </div>
 
-
 <%# BOOK NOW BUTTON,CHANGE TO POP UP LATER %>
-<%= simple_form_for [@service, @booking]  do |f| %>
-  <%= f.input :occurs_on,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :timeslot, as: :radio_buttons, collection: @timeslots %>
-  <%= f.button :submit, "Book Now", class: "button-1" %>
-<% end %>
+<div data-controller="search" data-search-target="timeslotdiv">
+  <%= render "form", service: @service, booking: @booking, timeslots: @timeslots %>
+</div>
 
 <%# Aesthetics problems with flatpicker %>

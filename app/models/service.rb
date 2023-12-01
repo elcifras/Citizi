@@ -3,10 +3,8 @@ class Service < ApplicationRecord
   belongs_to :user
   has_one :category, through: :sub_category
   has_many :timeslots, dependent: :destroy
-  has_many :bookings, through: :timeslot
-  has_many_attached :photos
-  has_many :reviews, through: :bookings
   has_many :bookings, through: :timeslots
+  has_many_attached :photos
   has_many :reviews, through: :bookings
 
   include PgSearch::Model
