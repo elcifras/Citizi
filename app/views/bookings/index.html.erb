@@ -5,11 +5,11 @@
 
   <% @bookings.each do |booking| %>
       <div class="booking-card mt-3">
-        <img class="booking-card-img" src="https://via.placeholder.com/342x187" alt="Booking Image">
+        <%= cl_image_tag service.photos.first.key, class: booking-card-img %>
         <div class="card-body">
           <div class="info-container">
             <div class="info">
-              <div class="hotel-name"><%= booking.service.user.hotel_name %></div>
+              <div class="hotel-name"><%= booking.service.usee.hotel_name %></div>
               <div class="service-name"><%= booking.service.sub_category.name %></div>
               <div class="date-time"><%= booking.timeslot.start_at.strftime("%A, %B %e, %Y") %></div>
             </div>
@@ -24,6 +24,9 @@
             <span class="call-to-action">
               <i class="fa-regular fa-comments"></i>
               <i class="fa-solid fa-share"></i>
+                <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Do you want to cancel your booking?" } do %>
+                  <i class="fa-solid fa-trash-can"></i>
+                <% end %>
             </span>
           </div>
         </div>

@@ -1,18 +1,18 @@
 class BookingsController < ApplicationController
   before_action :set_service, only: %i[create]
   before_action :authenticate_user!, only: %i[create index]
-  
+
   def index
     if current_user.is_hotel
       @bookings = current_user.accepted_bookings
     else
       @bookings = current_user.bookings
-      @markers = @bookings.geocoded.map do |booking|
-        {
-          lat: booking.latitude,
-          lng: booking.longitude
-        }
-      end
+      # @markers = @bookings.geocoded.map do |booking|
+      #   {
+      #     lat: booking.latitude,
+      #     lng: booking.longitude
+      #   }
+      # end
     end
   end
 
