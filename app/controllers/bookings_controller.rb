@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     #     }
     #   end
     # end
-    @active_bookings = current_user.bookings.where(status: "Confirmed").select{ |booking| booking.occurs_on > DateTime.yesterday}
+    @active_bookings = current_user.bookings.where(status: "Confirmed").select { |booking| booking.occurs_on > DateTime.yesterday }
     @past_bookings = current_user.bookings.select{ |booking| booking.occurs_on < DateTime.now }
     @cancelled_bookings = current_user.bookings.where(status: "Cancelled")
   end
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     unless current_user.is_hotel
       @booking = Booking.new(booking_params)
       @booking.user = current_user
-      @booking.timeslot = Timeslot.find(params[:booking][:timeslot_id]) # missing the front end to b able to select a tiemslot
+      @booking.timeslot = Timeslot.find(params[:booking][:timeslot_id])
       @booking.status = "Confirmed"
       if @booking.save
         redirect_to bookings_path, notice: "Booking created"

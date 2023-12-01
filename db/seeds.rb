@@ -599,8 +599,10 @@ end
   end
 end
 
+day = 10
+day_2 = 10
+
 10.times do
-  day = 10
   Booking.create!(
   occurs_on: DateTime.new(2023, 11, day, 18, 30, 0),
   user_id: user1.id,
@@ -611,12 +613,12 @@ end
 end
 
 10.times do
-  day = 10
   Booking.create!(
-  occurs_on: DateTime.new(2023, 12, day, 18, 30, 0),
+  occurs_on: DateTime.new(2023, 12, day_2, 18, 30, 0),
   user_id: user1.id,
   timeslot: Timeslot.all.sample,
   status: "Confirmed"
 )
-day += 1
+day_2 += 1
+
 end

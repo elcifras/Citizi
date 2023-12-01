@@ -3,8 +3,6 @@ class Booking < ApplicationRecord
   belongs_to :user
   # has_many :reviews, dependent: :destroy
   has_one :service, through: :timeslot
-  has_one :review
-  belongs_to :service
   has_one :review, dependent: :destroy
 
   STATUS = ["Confirmed", "Completed", "Cancelled", "Pending", "On-going"].freeze
