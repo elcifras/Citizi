@@ -16,9 +16,12 @@
   <body data-controller="map-toggle">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-
-    <div class="<%= "app-container" unless current_page?(controller: :pages, action: :home) %>">
-      <%= yield %>
-    </div>
+    <% unless params[:controller] == 'pages' && params[:action] == 'home' %>
+      <div class="app-container">
+        <%= yield %>
+      </div>
+      <% else %>
+        <%= yield %>
+      <% end %>
   </body>
 </html>
