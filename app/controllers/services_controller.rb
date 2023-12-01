@@ -16,7 +16,7 @@ class ServicesController < ApplicationController
       @services = @services.global_search(params[:query])
     end
 
-    if params[:address].present?
+    if params[:address].present? 
       @near_users_ids = User.is_hotel.near(params[:address], 5, order: "").ids
       @services = @services.where(user_id: @near_users_ids)
     end
@@ -24,7 +24,8 @@ class ServicesController < ApplicationController
     @markers = @services.map do |service|
       {
         lat: service.user.latitude,
-        lng: service.user.longitude
+        lng: service.user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {service: service})
       }
     end
   end

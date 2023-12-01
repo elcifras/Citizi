@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import mapboxgl from 'mapbox-gl' // Don't forget this!
 
 export default class extends Controller {
+  static targets = ["cardmap"];
   static values = {
     apiKey: String,
     markers: Array
@@ -25,8 +26,10 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup({ className: "fixed-popup" }).setHTML(marker.info_window_html) // Add this
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup) // Add this
         .addTo(this.map)
     })
   }
