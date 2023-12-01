@@ -1,5 +1,5 @@
 <%# TOP BAR %>
-<% unless params[:controller] == "pages" && params[:action] == "home" || params[:controller] == "services" && params[:action] == "index" %>
+<% unless params[:controller] == "pages" && params[:action] == "home" %>
 
   <nav class="topbar fixed-top topbar-light">
     <%= link_to :back, class: "nav-link" do %>
@@ -9,7 +9,7 @@
     <h1>
       <%= content_for :navbar_title %>
     </h1>
-
+    <div> <%= content_for :navbar_icons %></div>
     <% if params[:controller] == "services" && params[:action] == "show" %>
       <div class="topbar-icons">
         <i class="fa-regular fa-share-from-square topbar-share"></i>
