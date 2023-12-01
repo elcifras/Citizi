@@ -4,7 +4,7 @@
         <%= radio_button_tag 'booking[timeslot_id]', timeslot.id, false, id: "timeslot_#{timeslot.id}", class: "timeslot-radio", hidden: true %>
         <%= label_tag "timeslot_#{timeslot.id}" do %>
           <div class="card-content">
-            <%= timeslot.start_at.strftime("%Y-%m-%d %H:%M") %>
+            <%= timeslot.start_at.strftime("%l:%M %P") %>
           </div>
         <% end %>
       </div>

@@ -21,9 +21,18 @@
   -webkit-text-decoration: bold;
   text-decoration: bold;
   font-size: small;
-  padding: 4px 20px;
+  padding: 4px 12px;
   border-radius: 11px;
   display:inline-block;
   border: none;
   cursor: pointer;
+  margin: 3px;
+}
+
+.flatpickr-input {
+  color: $dark-blue;
+}
+
+.time-booknow {
+  width: 100%;
 }

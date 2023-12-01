@@ -42,6 +42,5 @@ class ServicesController < ApplicationController
       format.html
       format.text { render partial: "form", locals: { service: @service, booking: @booking, timeslots: @timeslots}, formats: [:html]}
     end
-    @timeslots = @service.timeslots.where("DATE(start_at) = ?", Date.current)
   end
 end

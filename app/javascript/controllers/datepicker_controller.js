@@ -3,6 +3,9 @@ import flatpickr from "flatpickr"; // You need to import this to use new flatpic
 
 export default class extends Controller {
   connect() {
-    flatpickr(this.element)
+    console.log(this.element)
+    flatpickr(this.element, {
+      minDate: "2023-12"
+  })
   }
 }

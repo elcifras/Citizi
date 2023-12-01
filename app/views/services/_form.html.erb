@@ -1,11 +1,14 @@
 <%= simple_form_for [service, booking]  do |f| %>
-    <%= f.input :occurs_on,
+  <%= f.input :occurs_on,
               as: :string,
-              input_html: { data: { controller: "datepicker", action: "change->search#senddate"  } } %>
-    <% if timeslots.present? %>
-      <%= render "timeslots", f: f, timeslots: timeslots %>
-      <% end %>
-    <div class="d-flex justify-content-center">
-      <%= f.button :submit, "Book Now", class: "button-1" %>
-    </div>
+              label: false,
+              input_html: {
+                data: { controller: "datepicker", action: "change->search#senddate" },
+              } %>
+  <% if timeslots.present? %>
+    <%= render "timeslots", f: f, timeslots: timeslots %>
   <% end %>
+  <div class="d-flex justify-content-center">
+    <%= f.button :submit, "Book Now", class: "book-now w-100" %>
+  </div>
+<% end %>
