@@ -28,7 +28,9 @@
         <% @services.each do |service| %>
           <div class="card card-service">
             <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
-              <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
+              <% if service.photos.attached? %>
+                <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
+              <% end %>
               <div class="card-body body-service">
                 <div class="service-main-info">
                   <h5 class="card-title"><%= service.user.hotel_name %></h5>
