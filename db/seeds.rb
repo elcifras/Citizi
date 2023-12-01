@@ -23,7 +23,7 @@ user1 = User.create!(
   first_name: 'Alice',
   last_name: 'Johnson',
   hotel_name: "",
-  email: 'alice@gmail.com',
+  email: '``alice@gmail.com``',
   is_hotel: false,
   bio: 'Fitness enthusiast',
   address: 'Carrer Joan guell 89, Barcelona',
