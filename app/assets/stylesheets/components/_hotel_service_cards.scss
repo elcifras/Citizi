@@ -10,9 +10,6 @@
   color: $light-gray;
 }
 
-// All service cards
-.card-services {
-}
 // Each individual service card
 .card-service {
   margin: 20px;
@@ -27,6 +24,11 @@
 .body-service {
   padding: 20px;
   display: flex;
+  justify-content: space-between;
+}
+
+.body-service-reviews {
+  padding: 20px;
   justify-content: space-between;
 }
 

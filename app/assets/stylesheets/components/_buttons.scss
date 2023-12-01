@@ -18,7 +18,7 @@
   background-color: transparent;
 }
 
-.button-3{
+.button-3 {
   color: $orange;
   font-size: small;
   background-color: rgba(60, 60, 67, 0.47); /* Red with 47% opacity */
@@ -29,4 +29,17 @@
   border-radius: 11px;
   display:inline-block;
   border: none;
+  margin: 3px;
+}
+
+.book-now {
+  border: 2px solid $orange; /* Darken the orange by 10% */
+  -webkit-text-decoration: bold;
+  text-decoration: bold;
+  font-size: small;
+  padding: 4px 20px;
+  border-radius: 11px;
+  background-color: rgba($orange, 0.3); /* Set transparency to 0.8 */
+  color: #ff8364;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
