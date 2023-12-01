@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     #     }
     #   end
     # end
-    @active_bookings = current_user.bookings.where(status: "Confirmed").select { |booking| booking.occurs_on > DateTime.yesterday }
+    @active_bookings = current_user.bookings#current_user.bookings.where(status: "Confirmed").select { |booking| booking.occurs_on > DateTime.yesterday }
     @past_bookings = current_user.bookings.select{ |booking| booking.occurs_on < DateTime.now }
     @cancelled_bookings = current_user.bookings.where(status: "Cancelled")
   end
