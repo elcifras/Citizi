@@ -13,8 +13,26 @@
 }
 
 .timeslot-card {
-  border: 1px solid #ddd;
   padding: 10px;
   border-radius: 5px;
+  color: $orange;
+  font-size: small;
+  background-color: rgba(60, 60, 67, 0.47); /* Red with 47% opacity */
+  -webkit-text-decoration: bold;
+  text-decoration: bold;
+  font-size: small;
+  padding: 4px 12px;
+  border-radius: 11px;
+  display:inline-block;
+  border: none;
   cursor: pointer;
+  margin: 3px;
+}
+
+.flatpickr-input {
+  color: $dark-blue;
+}
+
+.time-booknow {
+  width: 100%;
 }

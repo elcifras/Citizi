@@ -7,9 +7,9 @@ export default class extends Controller {
   }
 
   senddate(event) {
-    console.log (event.target.value)
+    console.log(event.target.value)
     const url = `?date=${event.target.value}`
-    fetch (url, { headers: {'Accept': 'text/plain' } } )
+    fetch(url, { headers: {'Accept': 'text/plain' } } )
       .then(response => response.text())
       .then((data) => {
         this.timeslotdivTarget.innerHTML = data
