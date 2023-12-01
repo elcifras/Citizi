@@ -1,6 +1,16 @@
+# app/controllers/services_controller.rb
 class ServicesController < ApplicationController
   def index
     @services = Service.all
+
+    case params[:sort_by]
+    when 'price'
+      @services = @services.order(price: params[:sort_direction] || :asc)
+    when 'distance'
+      @services = @services.joins(user: :address).order(Arel.sql("ST_Distance(users.latitude, users.longitude, ?, ?) #{params[:sort_direction] || 'asc'}"), params[:latitude], params[:longitude])
+    when 'rating'
+      @services = @services.joins(:reviews).order("reviews.rating #{params[:sort_direction] || 'desc'}")
+    end
 
     if params[:query].present?
       @services = @services.global_search(params[:query])
@@ -22,6 +32,6 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
     @booking = Booking.new
-    @timeslots = @service.timeslots.where("DATE(start_at) = ?", Date.current)    # Not correct, currently includes yesterday
+    @timeslots = @service.timeslots.where("DATE(start_at) = ?", Date.current)
   end
 end

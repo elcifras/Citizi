@@ -17,10 +17,9 @@
     <%# Search & filter needed here %>
     <div class="sort-by">
       <div class="sort-by-buttons">
-        <a href="/services?sort_by=recommended" class="button-1">Sort by</a>
-        <a href="/services?sort_by=price" class="button-1">Price</a>
-        <a href="/services?sort_by=distance" class="button-1">Distance</a>
-        <a href="/services?sort_by=distance" class="button-1">Rating</a>
+        <%= link_to 'Price', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
+        <%= link_to 'Distance', services_path(sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
+        <%= link_to 'Rating', services_path(sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
       </div>
     </div>
 
