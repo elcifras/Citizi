@@ -1,6 +1,7 @@
 require "open-uri"
 User.destroy_all
 Review.destroy_all
+Timeslot.destroy_all
 Booking.destroy_all
 Category.destroy_all
 SubCategory.destroy_all
@@ -30,7 +31,7 @@ user1 = User.create!(
   latitude: 41.380000,
   longitude: 2.132650,
   password: 'password1',
-  phone_number: '655-222-222',
+  phone_number: '655-222-222'
 )
 
 user2 = User.create!(
@@ -602,6 +603,17 @@ end
   day = 10
   Booking.create!(
   occurs_on: DateTime.new(2023, 11, day, 18, 30, 0),
+  user_id: user1.id,
+  timeslot: Timeslot.all.sample,
+  status: "Confirmed"
+)
+  day += 1
+end
+
+10.times do
+  day = 10
+  Booking.create!(
+  occurs_on: DateTime.new(2023, 12, day, 18, 30, 0),
   user_id: user1.id,
   timeslot: Timeslot.all.sample,
   status: "Confirmed"

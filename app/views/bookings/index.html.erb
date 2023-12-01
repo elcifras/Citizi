@@ -1,35 +1,31 @@
-<div class="booking-container mt-3">
+<div class="booking-container mt-3" data-controller="togglebooking">
   <% content_for :navbar_title do %>
-    Upcoming bookings
+    Your bookings
   <% end %>
+  <div class="tabs" >
+    <ul class="list-inline tabs-underlined">
+    <li>
+      <p data-togglebooking-target="li" data-action="click->togglebooking#fireactive" class="tab-underlined active">Confirmed</p>
+    </li >
+    <li>
+      <p data-togglebooking-target="li" data-action="click->togglebooking#firepast" class="tab-underlined">Past</p>
+    </li >
+    <li>
+      <p data-togglebooking-target="li" data-action="click->togglebooking#firecancelled"class="tab-underlined">Cancelled</p>
+    </li>
+  </ul>
+</div>
 
-  <% @bookings.each do |booking| %>
-      <div class="booking-card mt-3">
-        <%= cl_image_tag service.photos.first.key, class: booking-card-img %>
-        <div class="card-body">
-          <div class="info-container">
-            <div class="info">
-              <div class="hotel-name"><%= booking.service.usee.hotel_name %></div>
-              <div class="service-name"><%= booking.service.sub_category.name %></div>
-              <div class="date-time"><%= booking.timeslot.start_at.strftime("%A, %B %e, %Y") %></div>
-            </div>
-            <div class="price-tag"><%= "#{booking.service.price} €" %></div>
-          </div>
+  <div data-togglebooking-target="togglableActive" class="active-bookings">
+    <%= render "active_bookings" %>
+  </div>
 
+  <div data-togglebooking-target="togglablePast" class="past-bookings d-none">
+    <%= render "past_bookings" %>
+  </div>
 
+  <div data-togglebooking-target="togglableCancelled" class="cancelled-bookings d-none">
+    <%= render "cancelled_bookings" %>
+  </div>
 
-          <div class="div-line"></div>
-
-          <div class="card-footer">
-            <span class="call-to-action">
-              <i class="fa-regular fa-comments"></i>
-              <i class="fa-solid fa-share"></i>
-                <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Do you want to cancel your booking?" } do %>
-                  <i class="fa-solid fa-trash-can"></i>
-                <% end %>
-            </span>
-          </div>
-        </div>
-      </div>
-    <% end %>
 </div>
