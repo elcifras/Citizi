@@ -63,4 +63,14 @@
   background-color:rgba(221, 221, 221, 0.8667);
   border: none;
   font-size: 11px;
+  margin-right: 10px;
+}
+
+#query {
+  color: $dark-blue;
+}
+
+.form-control::placeholder {
+  color: $blue;
+  font-size: 10px !important;
 }
