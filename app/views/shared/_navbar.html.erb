@@ -31,7 +31,9 @@
   <% end %>
 
   <%# PATH NEEDED FOR LIVE CHAT HERE %>
-  <i class="fas fa-comment-alt navbar-icon"></i>
+  <%= link_to chatrooms_path, class: "nav-link" do %>
+   <i class="fas fa-comment-alt navbar-icon"></i>
+  <% end %>
 
   <%= link_to bookings_path, class: "nav-link" do %>
     <i class="fa-solid fa-calendar-days navbar-icon"></i>
