@@ -9,7 +9,7 @@
   }
 }
 
-.homepage{
+.homepage {
   background-size: cover;
   background-position: center;
 }
@@ -23,8 +23,9 @@
 .title {
   font-weight: bold;
   text-align: center;
-  margin-top: 250px; /* Adjust the margin-top to move the title down */
+  margin-top: 147px;
   margin-bottom: 25px;
+  font-size: 100px;
 }
 
 .sub-title {
@@ -35,10 +36,15 @@
 .flip-text {
   font-weight: bolder;
   text-align: center;
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+  background-color: rgba(250, 250, 250, 0.8);
+  border-radius: 25px;
 }
 
-.flip-text-holder {
-  color: white;
+.flip-text-services {
+  margin-left: 10px;
+  color: $orange;
 }
 
 .head {
