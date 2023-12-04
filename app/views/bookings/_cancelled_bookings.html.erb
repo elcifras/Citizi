@@ -1,14 +1,14 @@
 <% @cancelled_bookings.each do |booking| %>
-  <div class="booking-card mt-3">
+  <div class="booking-card-cancelled mt-3">
         <%= cl_image_tag booking.service.photos.first.key, class: "booking-card-img" %>
         <div class="card-body">
           <div class="info-container">
             <div class="info">
               <div class="hotel-name"><%= booking.service.user.hotel_name %></div>
               <div class="service-name"><%= booking.service.sub_category.name %></div>
-              <div class="date-time"><%= booking.timeslot.start_at.strftime("%A, %B %e, %Y") %></div>
+              <div class="date-time"><%= booking.occurs_on.strftime("%A, %B %e, %Y") %></div>
             </div>
-            <div class="price-tag"><%= "#{booking.service.price} €" %></div>
+            <div class="price-tag"><%= "#{booking.service.price.to_i} €" %></div>
           </div>
         </div>
       </div>
