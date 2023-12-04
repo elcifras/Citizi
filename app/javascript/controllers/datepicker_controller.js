@@ -5,7 +5,7 @@ export default class extends Controller {
   connect() {
     console.log(this.element)
     flatpickr(this.element, {
-      minDate: "2023-12"
+      minDate: "2023-12",
   })
   }
 }

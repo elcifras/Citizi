@@ -1,14 +1,15 @@
+
+<% date = date || nil %>
 <%= simple_form_for [service, booking]  do |f| %>
-  <%= f.input :occurs_on,
+  <%= f.input :occurs_on, label: "Choose a date",
               as: :string,
-              label: false,
               input_html: {
-                data: { controller: "datepicker", action: "change->search#senddate" },
+                data: { controller: "datepicker", action: "change->search#senddate", search_target:"date" }, value: date
               } %>
   <% if timeslots.present? %>
     <%= render "timeslots", f: f, timeslots: timeslots %>
   <% end %>
   <div class="d-flex justify-content-center">
-    <%= f.button :submit, "Book Now", class: "book-now w-100" %>
+    <%= f.button :submit, "Book Now", class: "w-100 button-2" %>
   </div>
 <% end %>

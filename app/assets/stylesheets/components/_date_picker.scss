@@ -1,0 +1,21 @@
+// Use the flatpickr-mobile class because we are on mobile
+.flatpickr-mobile {
+  // Use the :not() pseudo-class with the :placeholder-shown pseudo-class
+  // to display an ::after pseudo-element with the placeholder attribute as content
+  &:before {
+    color: #495057;
+    content: attr(placeholder) !important;
+    margin-right: 10px; // on some devices, this is shown: "--:-- --", in combination with a placeholder this is ugly, the margin makes it look a bit nicer.
+  }
+
+  // Then when we focus the input or when it has a value, we mask the ::after
+  &:focus {
+    &:before {
+      display: none;
+    }
+  }
+}
+// the value is stored in the hidden input which is placed before the actual visible input.
+input[type="hidden"]:not([value=""]) + .flatpickr-mobile:before {
+  display: none;
+}
