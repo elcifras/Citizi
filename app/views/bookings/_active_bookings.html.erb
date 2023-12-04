@@ -8,7 +8,7 @@
               <div class="service-name"><%= booking.service.sub_category.name %></div>
               <div class="date-time"><%= booking.occurs_on.strftime("%A, %B %e, %Y") %></div>
             </div>
-            <div class="price-tag"><%= "#{booking.service.price} €" %></div>
+            <div class="price-tag"><%= "#{booking.service.price.to_i} €" %></div>
           </div>
 
 
@@ -20,7 +20,6 @@
               <i class="fa-regular fa-comments"></i>
               <i class="fa-solid fa-share"></i>
                 <%= link_to booking_path(booking), data: { turbo_method: :patch, turbo_confirm: "Do you want to cancel your booking?" } do %>
-                <%#= link_to booking_path(booking), method: "update" do %>
                   <i class="fa-solid fa-trash-can"></i>
                 <% end %>
             </span>

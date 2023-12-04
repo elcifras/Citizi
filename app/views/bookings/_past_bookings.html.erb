@@ -9,7 +9,7 @@
               <div class="service-name"><%= booking.service.sub_category.name %></div>
               <div class="date-time"><%= booking.occurs_on.strftime("%A, %B %e, %Y") %></div>
             </div>
-            <div class="price-tag"><%= "#{booking.service.price} €" %></div>
+            <div class="price-tag"><%= "#{booking.service.price.to_i} €" %></div>
           </div>
 
 
@@ -18,6 +18,9 @@
 
           <div class="card-footer">
             <span class="call-to-action">
+              <%= link_to new_booking_review_path(booking) do %>
+                <i class="fa-regular fa-star"></i>
+              <% end %>
               <i class="fa-regular fa-comments"></i>
               <i class="fa-solid fa-share"></i>
             </span>

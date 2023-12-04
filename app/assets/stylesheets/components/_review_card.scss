@@ -1,0 +1,21 @@
+.review-card {
+  justify-content: center;
+  width: 342px;
+  height: 379px;
+  background: $dark-blue;
+  border-radius: 11px;
+  padding: 20px;
+}
+
+.star-rating {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.fas {
+  color: gold; /* or any color you prefer */
+}
+
+.fas.active {
+  color: orange; /* or a different color for active stars */
+}
