@@ -16,7 +16,7 @@ class ServicesController < ApplicationController
       @services = @services.global_search(params[:query])
     end
 
-    if params[:address].present? 
+    if params[:address].present?
       @near_users_ids = User.is_hotel.near(params[:address], 5, order: "").ids
       @services = @services.where(user_id: @near_users_ids)
     end
@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.text { render partial: "form", locals: { service: @service, booking: @booking, timeslots: @timeslots}, formats: [:html]}
+      format.text { render partial: "form", locals: { service: @service, booking: @booking, timeslots: @timeslots, date: search_date}, formats: [:html]}
     end
   end
 end
