@@ -15,4 +15,8 @@ class Service < ApplicationRecord
     category: [:name]
   }
 
+  def related_services
+    user.services.where.not(id: self.id)
+  end
+
 end

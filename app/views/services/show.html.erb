@@ -44,7 +44,7 @@
       <div class="title-price-container">
         <h5 class="card-title"><%= @service.user.hotel_name %></h5>
         <span class="button-2">
-          </i><%="#{@service.price}€"%>
+          </i><%="#{@service.price.to_i}€"%>
         </span>
       </div>
       <!-- Flex container for main info -->
@@ -54,9 +54,9 @@
         <div class="divider"></div>
           <div class="other-services">
             <p>Other Services</p>
-              <button class="button-3">Gym</button>
-              <button class="button-3">Pool</button>
-              <button class="button-3">Free Wifi</button>
+            <% @service.related_services.each do |service| %>
+              <%= link_to service.sub_category.name, service_path(service), class: "button-3" %>
+            <% end %>
           </div>
       </div>
     </div>
