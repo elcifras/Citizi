@@ -1,5 +1,13 @@
- <% content_for :navbar_title do %>
+<% content_for :navbar_title do %>
+  <%= form_with url: services_path, method: :get, class: "d-flex text_and_icon index_search_form item-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control stretch-search-bar",
+      placeholder: "Search for a service..."
+    %>
   <% end %>
+
+
   <%= content_for :navbar_icons do %>
     <label class="toggle">
       <input class="toggle-input" data-action="click->map-toggle#fire" type="checkbox" />
@@ -11,18 +19,17 @@
       </div>
     </label>
   <% end %>
+  <% end %>
 
   <div class="service-container mt-3">
-    <%# Search & filter needed here %>
     <div class="sort-by">
-      <div class="sort-by-buttons">
+      <div class="sort-by-buttons justify-content-start">
         <%= link_to 'Price', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
         <%= link_to 'Distance', services_path(sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
         <%= link_to 'Rating', services_path(sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
       </div>
     </div>
 
-    <%# Geolocation map needed here %>
     <div class="service-list-map-container">
       <div class="card-services" data-map-toggle-target="list">
         <% @services.each do |service| %>
@@ -32,15 +39,18 @@
                 <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
               <% end %>
               <div class="card-body body-service">
-                <div class="service-main-info">
+                <div class="service-main-info d-flex align-items-start justify-content-between">
                   <h5 class="card-title"><%= service.user.hotel_name %></h5>
+                    <span class="button-2">
+                      <%="#{service.price.to_i}€"%>
+                    </span>
+                  </div>
+                <div class="card-subcategory-address">
                   <p class="card-text"><%= service.sub_category.name %></p>
                   <p class="card-text"><%= service.user.address %></p>
                 </div>
-                <div class="service-secondary-info">
-                  <span class="button-2">
-                    <%="#{service.price}€"%>
-                  </span>
+              </div>
+                  </div>
                 </div>
               </div>
             <% end %>

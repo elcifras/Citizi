@@ -2,13 +2,8 @@
 <% unless params[:controller] == "pages" && params[:action] == "home" %>
 
   <nav class="topbar fixed-top topbar-light">
-    <%= link_to :back, class: "nav-link" do %>
-      <i class="fa-solid fa-arrow-left topbar-arrow"></i>
-    <% end %>
 
-    <h1>
-      <%= content_for :navbar_title %>
-    </h1>
+    <%= content_for :navbar_title %>
     <div> <%= content_for :navbar_icons %></div>
     <% if params[:controller] == "services" && params[:action] == "show" %>
       <div class="topbar-icons">

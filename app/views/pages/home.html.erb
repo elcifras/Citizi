@@ -1,30 +1,53 @@
 <div class="homepage" id="background_image" style="background-image: url(<%= asset_path('homepage_1.png') %>)">
       <div class="head">
       </div>
-      <h1 class="title">Citizi.</h1>
-        <p class="sub-title">Locals Meet Hotels</p>
-          <div class="flip-text" data-controller="home">
-          <p>Find the nearest</p><div class="flip-text-holder">
-              <span data-home-target="flipText"><em>Fitness Room</em></span>
+
+      <h1 class="title">Citizi</h1>
+
+      <div class="flip-text" data-controller="home" style="display: flex;align-items: flex-start;flex-direction: row;flex-wrap: nowrap;justify-content: center;">
+          <p>Find your nearest</p><div class="flip-text-holder">
+          <div class="flip-text-services">
+              <span data-home-target="flipText" class='d-none'><em>Co-working</em></span>
+              <span data-home-target="flipText" class='d-none'><em>Gym</em></span>
               <span data-home-target="flipText" class='d-none'><em>Pool</em></span>
               <span data-home-target="flipText" class='d-none'><em>Massage</em></span>
-              <span data-home-target="flipText" class='d-none'><em>Co-working</em></span>
-            </div>
+              <span data-home-target="flipText" class='d-none'><em>Spa</em></span>
           </div>
+        </div>
+      </div>
+
       <%= form_with url: services_path, method: :get, class: "d-flex text_and_icon flex-container item-flex" do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Massage, coworking... "
+            placeholder: "Search for a service "
         %>
+
         <%= text_field_tag :address,
             params[:address],
             class: "form-control",
             placeholder: "Barcelona "
         %>
+
         <div class="line"></div>
         <%= button_tag(type: "submit", name: "search", class: "btn flex-item text_and_icon") do %>
           <%= content_tag(:i, "", class: "fas fa-search search_icon") %>
         <% end %>
       <% end %>
+        <p class="sub-title">Locals Meet Hotels</p>
 </div>
+
+<%#
+<form class="d-flex text_and_icon flex-container item-flex" action="/lessons" accept-charset="UTF-8" method="get">
+      <select name="subject" id="subject" class="form-control"><option value="">What do you want to learn?</option><option value="Maths">Maths</option>
+<option value="English">English</option>
+<option value="French">French</option>
+<option value="Philosophy">Philosophy</option>
+<option value="Biology">Biology</option>
+<option value="Chemistry">Chemistry</option>
+<option value="Physics">Physics</option></select>
+            <div class="line"></div>
+
+      <button name="search" type="submit" class="btn flex-item text_and_icon">
+        <i class="fas fa-search search_icon" aria-hidden="true"></i>
+</button></form> %>
