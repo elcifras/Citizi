@@ -1,0 +1,19 @@
+    <div class="card card-service">
+      <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
+        <% if service.photos.attached? %>
+          <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
+        <% end %>
+        <div class="card-body body-service">
+          <div class="service-main-info d-flex align-items-start justify-content-between">
+            <h5 class="card-title"><%= service.user.hotel_name %></h5>
+            <span class="button-2">
+              <%="#{service.price.to_i}€"%>
+            </span>
+          </div>
+          <div class="card-subcategory-address">
+            <p class="card-text"><%= service.sub_category.name %></p>
+            <p class="card-text"><%= service.user.address %></p>
+          </div>
+        </div>
+      </div>
+<% end %>

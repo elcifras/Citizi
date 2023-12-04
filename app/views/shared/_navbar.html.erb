@@ -34,8 +34,9 @@
     <i class="fa-solid fa-calendar-days navbar-icon"></i>
   <% end %>
 
-  <%# PATH NEEDED FOR PROFILE/USERS ID HERE %>
-  <i class="fa-solid fa-user navbar-icon"></i>
+  <%= link_to edit_user_registration_path(current_user), class: "nav-link" do %>
+    <i class="fa-solid fa-user navbar-icon"></i>
+  <% end %>
 
   <%# Additional icons for services/show page %>
 
