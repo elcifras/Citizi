@@ -33,6 +33,8 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
     @booking = Booking.new
+    @reviews = @service.reviews
+    @average_rating = @reviews.average(:rating)
 
     if params[:date].present?
       search_date = Date.parse(params[:date])
