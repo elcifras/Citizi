@@ -1,21 +1,48 @@
 .review-card {
   justify-content: center;
   width: 342px;
-  height: 379px;
-  background: $dark-blue;
+  height: 320px;
+  background: #202834;
   border-radius: 11px;
-  padding: 20px;
 }
 
-.star-rating {
-  display: inline-block;
-  font-size: 24px;
+.review-card-rating {
+  justify-content: center;
+  width: 342px;
+  height: 260px;
+  background: #202834;
+  border-radius: 11px;
+  padding: 11px;
+  margin: 20px;
 }
 
-.fas {
-  color: gold; /* or any color you prefer */
+.button-2-review {
+  color: $light-gray;
+  border: 2px solid $light-gray;
+  -webkit-text-decoration: bold;
+  text-decoration: bold;
+  font-size: small;
+  padding: 4px 20px;
+  border-radius: 11px;
+  background-color: transparent;
+  width: 100%;
+  margin-top: 15px;
 }
 
-.fas.active {
-  color: orange; /* or a different color for active stars */
+.review-rating {
+  color: $light-gray;
+  font-size: large;
+}
+
+.title-price-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.info-service-card {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }

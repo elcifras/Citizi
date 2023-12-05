@@ -34,7 +34,10 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
     @booking = Booking.new
     @chatroom = current_user.chatrooms.find_by(service: @service)
-  
+    
+    @reviews = @service.reviews
+    @average_rating = @reviews.average(:rating)
+
     if params[:date].present?
       search_date = Date.parse(params[:date])
       @timeslots = @service.timeslots.where("DATE(start_at) = ?", search_date)

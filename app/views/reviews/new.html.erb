@@ -1,21 +1,34 @@
 <div class="booking-container mt-3">
-<div class="booking-card mt-3">
+<div class="review-card mt-3">
   <%= cl_image_tag @booking.service.photos.first.key, class: "booking-card-img" %>
-  <div class="info-container">
-    <div class="info">
-      <div class="hotel-name"><%= @booking.service.user.hotel_name %></div>
+  <div class="review-infos">
+  <div class="title-price-card">
+    <%= @booking.service.user.hotel_name %>
+    <span class="button-2">
+        </i><%="#{@booking.service.price.to_i}€"%>
+      </span>
+  </div>
+    <div class="info-service-card">
       <div class="service-name"><%= @booking.service.sub_category.name %></div>
       <div class="date-time"><%= @booking.occurs_on.strftime("%A, %B %e, %Y") %></div>
     </div>
-      <div class="price-tag"><%= "#{@booking.service.price.to_i} €" %></div>
   </div>
 </div>
 
 
-<div class="review-card mt-3">
+<div class="review-card-rating mt-3">
   <p>Review your experience</p>
-  <div class="star-rating">
-  <%= render_stars(@review.rating) %>
+<div data-controller="rating" class="review">
+  <%= simple_form_for [@booking, @review] do |f| %>
+    <%= f.input :rating, as: :hidden, input_html: { data: { rating_target: "ratinginput" } } %>
+    <div class="my-3">
+      <% Review::AUTHORIZED_RATINGS.each do |index| %>
+        <i id="<%= index %>" class="review-rating far fa-star", data-rating-target="ratingstar" data-action="click->rating#display"></i>
+      <% end %>
+    </div>
+    <%= f.input :comment %>
+    <%= f.submit class: "button-2-review", value: "Save" %>
+  <% end %>
 </div>
 </div>
 </div>
