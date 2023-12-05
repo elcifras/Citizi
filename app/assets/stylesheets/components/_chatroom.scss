@@ -1,27 +1,32 @@
 .chatroom {
-  background: white;
+  background: $blue;
   margin-top: 9px;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 110px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  gap: 10px;
 
   h1 {
+    
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     padding: 1rem;
   }
 
   .messages {
-    height: 100%;
+    flex-grow: 1;
     overflow: scroll;
     padding: 1rem;
+    color: white;
   }
 
   #new_message {
     border-top: 1px solid $gray-200;
     padding: 1rem;
+    gap: 10px;
+    font-size: medium;
 
     .form-group {
       margin-bottom: 0;
