@@ -28,6 +28,10 @@ class ServicesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {service: service})
       }
     end
+
+    @reviews = @service.reviews
+    @average_rating = @reviews.average(:rating)
+
   end
 
   def show
