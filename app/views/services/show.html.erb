@@ -51,7 +51,7 @@
       <div class="service-secondary-info">
         <!-- Flex container for title and price -->
         <div class="title-price-container">
-          <h5 class="card-title"> </h5>
+          <h5 class="card-title"><%= @service.user.hotel_name %></h5>
           <span class="button-2">
             </i><%="#{@service.price.to_i}€"%>
           </span>
