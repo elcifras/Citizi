@@ -29,16 +29,13 @@ class ServicesController < ApplicationController
       }
     end
 
-    @reviews = @service.reviews
-    @average_rating = @reviews.average(:rating)
-
   end
 
   def show
     @service = Service.find(params[:id])
     @booking = Booking.new
     @chatroom = current_user.chatrooms.find_by(service: @service)
-    
+
     @reviews = @service.reviews
     @average_rating = @reviews.average(:rating)
 
