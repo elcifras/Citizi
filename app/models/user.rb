@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :accepted_bookings, through: :timeslots, source: :booking
   has_many :reviews, through: :bookings
   has_many :messages
-  has_many :chatrooms, through: :messages
+  has_many :chatrooms
 
   scope :is_hotel, -> { where(is_hotel: true) }
 

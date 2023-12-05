@@ -1,83 +1,93 @@
 <%# <p>Find me in app/views/services/show.html.erb</p> %>
-
-<%# HOTEL SERVICE SLIDE SHOW %>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <% if @service.photos.attached? %>
-        <% @service.photos.each_with_index do |photo, index| %>
-        <div class="carousel-item <%= "active" if index == 0%>">
-        <%= cl_image_tag photo.key, class: "d-block w-100", height: 260 %>
-        </div>
-        <% end %>
-      <% else %>
-        <div class="carousel-item active">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" class="d-block w-100" alt="Service Card">
-        </div>
-        <div class="carousel-item">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/42/d5/59/margot-house.jpg?w=1400&h=-1&s=1" class="d-block w-100" alt="More Hotel">
-        </div>
-        <div class="carousel-item">
-          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/42/d5/60/margot-house.jpg?w=1400&h=-1&s=1" class="d-block w-100" alt="Hotel">
-        </div>
+<div class="show-service-container">
+  <% if @chatroom.blank? %>
+    <%= button_to service_chatrooms_path(@service) do %>
+      <div class="floating-chat-icon"><i class="fa-regular fa-comments"></i></div>
     <% end %>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<%# HOTEL SERVICE CARD %>
-<div class="card card-service-show">
-  <div class="card-body body-service">
-    <div class="service-secondary-info">
-      <!-- Flex container for title and price -->
-      <div class="title-price-container">
-        <h5 class="card-title"><%= @service.user.hotel_name %></h5>
-        <span class="button-2">
-          </i><%="#{@service.price.to_i}€"%>
-        </span>
-      </div>
-      <!-- Flex container for main info -->
-      <div class="service-main-info">
-        <p class="card-text"><%= @service.sub_category.name %></p>
-        <p class="card-text"><%= @service.description %></p>
-        <div class="divider"></div>
-          <div class="other-services">
-            <p>Other Services</p>
-            <% @service.related_services.each do |service| %>
-              <%= link_to service.sub_category.name, service_path(service), class: "button-3" %>
-            <% end %>
+  <% else %>
+     <%= link_to chatroom_path(@chatroom) do %>
+      <div class="floating-chat-icon"><i class="fa-regular fa-comments"></i></div>
+      <% end %>
+  <% end %>
+  <%# HOTEL SERVICE SLIDE SHOW %>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <% if @service.photos.attached? %>
+          <% @service.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%= "active" if index == 0%>">
+          <%= cl_image_tag photo.key, class: "d-block w-100", height: 260 %>
           </div>
+          <% end %>
+        <% else %>
+          <div class="carousel-item active">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/09/11/63/lobby-v18391035.jpg?w=2400&h=-1&s=1" class="d-block w-100" alt="Service Card">
+          </div>
+          <div class="carousel-item">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/42/d5/59/margot-house.jpg?w=1400&h=-1&s=1" class="d-block w-100" alt="More Hotel">
+          </div>
+          <div class="carousel-item">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/42/d5/60/margot-house.jpg?w=1400&h=-1&s=1" class="d-block w-100" alt="Hotel">
+          </div>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <%# HOTEL SERVICE CARD %>
+  <div class="card card-service-show">
+    <div class="card-body body-service">
+      <div class="service-secondary-info">
+        <!-- Flex container for title and price -->
+        <div class="title-price-container">
+          <h5 class="card-title"> </h5>
+          <span class="button-2">
+            </i><%="#{@service.price.to_i}€"%>
+          </span>
+        </div>
+        <!-- Flex container for main info -->
+        <div class="service-main-info">
+          <p class="card-text"><%= @service.sub_category.name %></p>
+          <p class="card-text"><%= @service.description %></p>
+          <div class="divider"></div>
+            <div class="other-services">
+              <p>Other Services</p>
+              <% @service.related_services.each do |service| %>
+                <%= link_to service.sub_category.name, service_path(service), class: "button-3" %>
+              <% end %>
+            </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<%# REVIEWS CARD %>
-<%= render partial: "services/reviews", locals: { reviews: @reviews } %>
+  <%# REVIEWS CARD %>
+  <%= render partial: "services/reviews", locals: { reviews: @reviews } %>
 
-<%# BOOK NOW BUTTON,CHANGE TO POP UP LATER %>
-<div class="card card-service-show">
-  <div class="card-body body-service">
-    <div data-controller="search" data-search-target="timeslotdiv" class="time-booknow">
-      <%= render "form", service: @service, booking: @booking, timeslots: @timeslots %>
+  <%# BOOK NOW BUTTON,CHANGE TO POP UP LATER %>
+  <div class="card card-service-show">
+    <div class="card-body body-service">
+      <div data-controller="search" data-search-target="timeslotdiv" class="time-booknow">
+        <%= render "form", service: @service, booking: @booking, timeslots: @timeslots %>
+      </div>
+      <!-- Add other elements related to booking here -->
     </div>
-    <!-- Add other elements related to booking here -->
   </div>
-</div>
-<%# Aesthetics problems with flatpicker %>
+  <%# Aesthetics problems with flatpicker %>
 
 <%# Fix the nav bar
 targetting the calendar
 changing the date/time format
 booking page not working %>
+</div>

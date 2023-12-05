@@ -8,10 +8,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
-  resources :chatrooms, only: [:show, :create, :index] do
+  resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
   end
+  
   resources :services, only: [:index, :show] do
+    resources :chatrooms, only: :create
     resources :bookings, only: [:create]
   end
   resources :bookings, only: [:index, :update] do

@@ -33,7 +33,8 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
     @booking = Booking.new
-
+    @chatroom = current_user.chatrooms.find_by(service: @service)
+  
     if params[:date].present?
       search_date = Date.parse(params[:date])
       @timeslots = @service.timeslots.where("DATE(start_at) = ?", search_date)

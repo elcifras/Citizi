@@ -178,6 +178,26 @@
   transform: translateX(-100vw);
 }
 // SHOW PAGE
+.floating-chat-icon {
+  position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: #E76F51;
+    color: #fff;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 
 // Service show card
 .card-service-show {
