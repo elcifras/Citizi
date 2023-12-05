@@ -114,6 +114,12 @@
 .toggle-input:checked~.toggle-label:after {
   opacity: 1;
 }
+.toggle-input:checked~.toggle-icons-container .fa-location-dot {
+  color: $orange;
+}
+.toggle-input:not(:checked)~.toggle-icons-container .fa-list {
+  color: $orange;
+}
 .toggle-handle {
   position: absolute;
   top: 4px;
