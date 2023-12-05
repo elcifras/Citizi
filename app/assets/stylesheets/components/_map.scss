@@ -24,9 +24,12 @@
   }
 
   .mapboxgl-popup-content {
-    flex-grow: 1;
+      flex-grow: 1;
+      background-color: $dark-blue;
+    }
   }
-}
+  
+
 .card-popup-map {
   display: flex;
   justify-content: space-around;
