@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatroom = Chatroom.where(user: routecurrent_user)
+    @chatroom = Chatroom.where(user: current_user)
   end
 
   def create

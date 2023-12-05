@@ -114,6 +114,13 @@
 .toggle-input:checked~.toggle-label:after {
   opacity: 1;
 }
+.toggle-input:not(:checked)~.toggle-icons-container .fa-list {
+  color: $orange;
+}
+.toggle-input:checked~.toggle-icons-container .fa-location-dot {
+  color: $orange;
+}
+
 .toggle-handle {
   position: absolute;
   top: 4px;
@@ -147,12 +154,12 @@
 
 .toggle-icons-container {
   position: absolute;
-  top: 15px;
+  top: 13px;
   display: flex;
   justify-content: space-between;
-  padding: 0 19px 0 12px;
+  padding: 0 19px 0 11px;
   width: 100%;
-
+  font-size: 18px;
 }
 
 .service-list-map-container {
