@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="favourites"
 export default class extends Controller {
   connect() {
   }
@@ -10,7 +9,6 @@ export default class extends Controller {
     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     const favouriteButton = event.currentTarget
     const serviceId = favouriteButton.dataset.serviceId
-    // is this correct?
     const requestInfo = {
       method: "POST",
       headers: { "Accept": "application/json", 'X-CSRF-Token': token, "Content-Type": "application/json" }
@@ -19,8 +17,8 @@ export default class extends Controller {
     fetch(`/favourites?service_id=${serviceId}`, requestInfo)
       .then(response => response.json())
       .then((data) => {
-        this.element.outerHTML = data.inserted
-      })
+        this.element.outerHTML = data.inserted;
+      });
   }
 
   deleteFavourite(event) {
@@ -28,7 +26,6 @@ export default class extends Controller {
     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     const favouriteButton = event.currentTarget
     const serviceId = favouriteButton.dataset.serviceId
-    //serviceId? not being used in the controller, is it just service?
     const requestInfo = {
       method: "DELETE",
       headers: { "Accept": "application/json", 'X-CSRF-Token': token, "Content-Type": "application/json" }
@@ -37,7 +34,7 @@ export default class extends Controller {
     fetch(`/favourites/${serviceId}`, requestInfo)
       .then(response => response.json())
       .then((data) => {
-        this.element.outerHTML = data.inserted
-      })
+        this.element.outerHTML = data.inserted;
+      });
   }
 }

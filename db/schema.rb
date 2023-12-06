@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_04_151207) do
 ActiveRecord::Schema[7.1].define(version: 2023_12_05_093515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,10 +153,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_093515) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "timeslots"
   add_foreign_key "bookings", "users"
-  add_foreign_key "favourites", "services"
-  add_foreign_key "favourites", "users"
   add_foreign_key "chatrooms", "services"
   add_foreign_key "chatrooms", "users"
+  add_foreign_key "favourites", "services"
+  add_foreign_key "favourites", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "bookings"
