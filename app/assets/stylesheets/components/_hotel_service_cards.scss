@@ -200,6 +200,21 @@
 .slide-left {
   transform: translateX(-100vw);
 }
+
+//Favourites
+.fa-heart {
+  font-size: 32px;
+  position: absolute;
+  top: 28px;
+  right: 16px;
+  color: $orange;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+
 // SHOW PAGE
 .floating-chat-icon {
   position: fixed;

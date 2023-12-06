@@ -1,19 +1,29 @@
-    <div class="card card-service">
-      <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
-        <% if service.photos.attached? %>
-          <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
-        <% end %>
-        <div class="card-body body-service">
-          <div class="service-main-info d-flex align-items-start justify-content-between">
-            <h5 class="card-title"><%= service.user.hotel_name %></h5>
-            <span class="button-2">
-              <%="#{service.price.to_i}€"%>
-            </span>
-          </div>
-          <div class="card-subcategory-address">
-            <p class="card-text"><%= service.sub_category.name %></p>
-            <p class="card-text"><%= service.user.address %></p>
-          </div>
-        </div>
+<%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
+
+  <div class="card card-service" data-controller="favourites">
+    <% if current_user && current_user.favourites.reload.pluck(:service_id).include?(service.id) %>
+      <% user_favourite_service = current_user.favourites.find_by(service_id: service.id) %>
+      <%= link_to '<i class="fa-solid fa-heart fa-xl"></i>'.html_safe, favourite_path(user_favourite_service), data:{ turbo_method: :delete, service_id: service.id, action: 'click->favourites#deleteFavourite'} %>
+    <% else %>
+      <%= link_to '<i class="fa-regular fa-heart fa-xl"></i>'.html_safe, favourites_path({ service_id: service.id }), data: { turbo_method: :post, service_id: service.id, action: 'click->favourites#addFavourite'} %>
+    <% end %>
+
+    <% if service.photos.attached? %>
+      <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
+    <% end %>
+
+
+    <div class="card-body body-service">
+      <div class="service-main-info d-flex align-items-start justify-content-between">
+        <h5 class="card-title"><%= service.user.hotel_name %></h5>
+        <span class="button-2">
+          <%="#{service.price.to_i}€"%>
+        </span>
       </div>
+      <div class="card-subcategory-address">
+        <p class="card-text"><%= service.sub_category.name %></p>
+        <p class="card-text"><%= service.user.address %></p>
+      </div>
+    </div>
+  </div>
 <% end %>
