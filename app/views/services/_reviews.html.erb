@@ -1,18 +1,42 @@
 <%# REVIEWS CARD %>
 <div class="card card-reviews">
   <div class="card-body body-service-reviews">
+    <div class="review-text-container">
+
+      <% if @reviews.any? %>
     <div class="title-reviews-container">
       <h5 class="card-title">Reviews</h5>
+      <p class="card-text"> <%= @average_rating.round(1) %>
+      <i class="review-rating fas fa-star"></i> </p>
     </div>
-    <div class="review-text-container">
-      <p class="card-text">4.9 ★</p>
-      <div class="divider"></div>
+        <div class="divider"></div>
+        <% @reviews.each do |review| %>
+          <p class="card-text"><% review.rating.times do %>
+            <i class="review-rating fas fa-star"></i>
+          <% end %>
+        </p>
+          <p class="card-text"><%= review.comment %></p>
+        <div class="divider"></div>
+        <% end %>
+
+      <% else %>
+        <p class="card-text"> 4.2 </p>
+        <div class="divider"></div>
+        <p class="card-text">★★★★</p>
+        <p class="card-text">I loved it. Will book again</p>
+        <div class="divider"></div>
+        <p class="card-text">★★★</p>
+        <p class="card-text">Beautiful hotel but disappointing service</p>
+        <div class="divider"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+ <%# REVIEWS
       <p class="card-text">I loved it. Will book again</p>
       <p class="card-text">★★★★★</p>
       <div class="divider"></div>
       <p class="card-text">Beautiful hotel but disappointing service</p>
       <p class="card-text">★★★</p>
-      <div class="divider"></div>
-    </div>
-  </div>
-</div>
+      <div class="divider"></div>%>
