@@ -28,11 +28,16 @@ class ServicesController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {service: service})
       }
     end
+
   end
 
   def show
     @service = Service.find(params[:id])
     @booking = Booking.new
+    @chatroom = current_user.chatrooms.find_by(service: @service)
+
+    @reviews = @service.reviews
+    @average_rating = @reviews.average(:rating)
 
     if params[:date].present?
       search_date = Date.parse(params[:date])

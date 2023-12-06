@@ -11,6 +11,16 @@
   height: 379px;
   background: $dark-blue;
   border-radius: 11px;
+  margin-bottom: 20px;
+}
+
+.booking-card-cancelled {
+  justify-content: center;
+  width: 342px;
+  height: 310px;
+  background: $dark-blue;
+  border-radius: 11px;
+  margin-bottom: 20px;
 }
 
 .booking-card-img {
@@ -23,6 +33,12 @@
   margin: 10px 10px 10px 10px;
   height: auto;
 }
+
+.top-body-info {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
 .info {
   margin-left: 10px;
 }
