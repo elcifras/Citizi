@@ -1,9 +1,9 @@
 <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
 
   <div class="card card-service" data-controller="favourites">
-    <% if current_user && current_user.favourites.pluck(:service_id).include?(service.id) %>
+    <% if current_user && current_user.favourites.reload.pluck(:service_id).include?(service.id) %>
       <% user_favourite_service = current_user.favourites.find_by(service_id: service.id) %>
-      <%= link_to '<i class="fa-solid fa-heart fa-xl"></i>'.html_safe, favourite_path(user_favourite_service, service_id: service.id), data:{ turbo_method: :delete, service_id: service.id, action: 'click->favourites#deleteFavourite'} %>
+      <%= link_to '<i class="fa-solid fa-heart fa-xl"></i>'.html_safe, favourite_path(user_favourite_service), data:{ turbo_method: :delete, service_id: service.id, action: 'click->favourites#deleteFavourite'} %>
     <% else %>
       <%= link_to '<i class="fa-regular fa-heart fa-xl"></i>'.html_safe, favourites_path({ service_id: service.id }), data: { turbo_method: :post, service_id: service.id, action: 'click->favourites#addFavourite'} %>
     <% end %>

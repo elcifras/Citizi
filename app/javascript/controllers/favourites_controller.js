@@ -31,7 +31,7 @@ export default class extends Controller {
       headers: { "Accept": "application/json", 'X-CSRF-Token': token, "Content-Type": "application/json" }
     }
 
-    fetch(`/favourites/${serviceId}`, requestInfo)
+    fetch(event.currentTarget.href, requestInfo)
       .then(response => response.json())
       .then((data) => {
         this.element.outerHTML = data.inserted;
