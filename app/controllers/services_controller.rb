@@ -7,7 +7,7 @@ class ServicesController < ApplicationController
     when 'price'
       @services = @services.order(price: params[:sort_direction] || :asc)
     when 'distance'
-      @services = @services.joins(user: :address).order(Arel.sql("ST_Distance(users.latitude, users.longitude, ?, ?) #{params[:sort_direction] || 'asc'}"), params[:latitude], params[:longitude])
+      @services = @services.near(current_user.address).order(distance: params[:sort_direction] || :asc)
     when 'rating'
       @services = @services.joins(:reviews).order("reviews.rating #{params[:sort_direction] || 'desc'}")
     end

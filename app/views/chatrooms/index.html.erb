@@ -1,0 +1,43 @@
+<% content_for :navbar_title do %>
+  <h1>My Chats</h1>
+<% end %>
+<div class="chatroom-container">
+
+  <ul class="w-100">
+    <% @empty_chats.each do |empty| %>
+      <li class="w-100">
+        <%= link_to chatroom_path(empty) do %>
+          <div class="chat-hotel">  
+           <div class="hotel-avatar"> <%= cl_image_tag empty.service.user.avatar.key, width: 80, height: 80 %></div> 
+           <div class="hotel-name"><strong><%= empty.service.user.hotel_name %></strong></div>
+           <p>Contact the hotel</p>
+            
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+      <% @ordered_chats.each do |chatroom| %>
+        <li class="w-100">
+          <% other_user = current_user.is_hotel ? chatroom.user : chatroom.service.user %>
+          <%= link_to chatroom_path(chatroom) do %>
+          <div class="chat-hotel">  
+            <div class="hotel-avatar">
+              <% if other_user.is_hotel %>
+                <%= cl_image_tag other_user.avatar.key, width: 80, height: 80  %>
+              <% else %>
+                <i class="fa fa-person"></i>
+              <% end %>
+            </div> 
+            <div class="hotel-name w-50">
+              <strong><%= other_user.is_hotel ? other_user.hotel_name : other_user.first_name %></strong>
+              <div class="last-message d-flex justify-content-between w-100 mt-2 align-items-end">
+                <p class="mb-0"><%= chatroom.messages.last.content %></p>
+                <p class="last-message-time"><%= time_ago_in_words(chatroom.messages.last.created_at) %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+  </ul>
+</div>

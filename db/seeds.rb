@@ -47,6 +47,9 @@ user2 = User.create!(
   password: 'password2',
   phone_number: '655-333-333',
 )
+avatar2 = URI.open("https://www.vendomtalents.com/image/logos/logo-el-palace-barcelona-387-.png")
+user2.avatar.attach(io: avatar2, filename: "avatar2")
+user2.save
 
 user3 =User.create!(
   first_name: 'Charlie',
@@ -269,6 +272,7 @@ sub7 = SubCategory.create!(
   name: "Workplaces for foodies",
   category_id: cat1.id
 )
+
 
 photo1 = URI.open("https://cf.bstatic.com/xdata/images/hotel/max1280x900/489411470.jpg?k=f5575167317f2feff595ee5b4e2f5836bff735805dd47b5589a6bf11999f6729&o=&hp=1")
 photo2 = URI.open("https://cf.bstatic.com/xdata/images/hotel/max1280x900/43419709.jpg?k=c019ed264ac13968681dc360f37c1ef91ac8729f53274d8e79e00243c9ee1fbf&o=&hp=1")
@@ -622,3 +626,6 @@ end
 day_2 += 1
 
 end
+
+
+

@@ -188,23 +188,26 @@
 // SHOW PAGE
 .floating-chat-icon {
   position: fixed;
-    bottom: 60px;
-    right: 20px;
-    background-color: #E76F51;
-    color: #fff;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    padding: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-end;
+  bottom: 75px;
+  right: 25px;
+  background-color: #E76F51;
+  color: #fff;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  .fa-comments::before {
+    font-size: 40px;
+  }
 }
 
 // Service show card

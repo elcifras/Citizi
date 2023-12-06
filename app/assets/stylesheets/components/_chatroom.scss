@@ -33,3 +33,50 @@
     }
   }
 }
+
+// .chatroom-container {
+//   height: 100vh;
+//   width: 100%;
+// }
+.chat-hotel {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  background-color: $dark-blue;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .hotel-name {
+    margin-bottom: 20px;
+    margin: 10px auto 10px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Style for the chatroom container */
+.chatroom-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Style for the chatroom list */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* Style for the chatroom links */
+a {
+  text-decoration: none;
+  color: #000;
+}
+

@@ -1,5 +1,5 @@
 <%# TOP BAR %>
-<% unless params[:controller] == "pages" && params[:action] == "home" %>
+<% unless (params[:controller] == "pages" && params[:action] == "home") || (params[:controller] == "users" && params[:action] == "edit") %>
 
   <nav class="topbar fixed-top topbar-light">
 

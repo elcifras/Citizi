@@ -4,8 +4,11 @@ class Service < ApplicationRecord
   has_one :category, through: :sub_category
   has_many :timeslots, dependent: :destroy
   has_many :bookings, through: :timeslots
+  has_many :chatrooms
   has_many_attached :photos
   has_many :reviews, through: :bookings
+  after_validation :geocode, if: ->(obj) { obj.user.address.present? || obj.user.address_changed? }
+  geocoded_by :address
 
   include PgSearch::Model
   pg_search_scope :global_search,
@@ -19,4 +22,7 @@ class Service < ApplicationRecord
     user.services.where.not(id: self.id)
   end
 
+  def address
+    user.address
+  end
 end
