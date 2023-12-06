@@ -1,5 +1,5 @@
-    <div class="card card-service">
       <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
+    <div class="card card-service" >
         <% if service.photos.attached? %>
           <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
         <% end %>
