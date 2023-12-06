@@ -1,3 +1,5 @@
+require "rqrcode"
+
 class BookingsController < ApplicationController
   before_action :set_service, only: %i[create]
   before_action :authenticate_user!, only: %i[create index]
