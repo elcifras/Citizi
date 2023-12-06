@@ -1,7 +1,7 @@
 # app/controllers/services_controller.rb
 class ServicesController < ApplicationController
   def index
-    @services = Service.all
+    @services = Service.all.with_attached_photos
 
     case params[:sort_by]
     when 'price'

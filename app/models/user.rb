@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :reviews, through: :bookings
   has_many :messages
   has_many :chatrooms
+  has_many :favourites, dependent: :destroy
 
   scope :is_hotel, -> { where(is_hotel: true) }
 
