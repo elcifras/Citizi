@@ -72,9 +72,6 @@
     </div>
   </div>
 
-  <%# REVIEWS CARD %>
-  <%= render partial: "services/reviews", locals: { reviews: @reviews } %>
-
   <%# BOOK NOW BUTTON,CHANGE TO POP UP LATER %>
   <div class="card card-service-show">
     <div class="card-body body-service">
@@ -85,6 +82,9 @@
     </div>
   </div>
   <%# Aesthetics problems with flatpicker %>
+
+  <%# REVIEWS CARD %>
+  <%= render partial: "services/reviews", locals: { reviews: @reviews } %>
 
 <%# Fix the nav bar
 targetting the calendar
