@@ -1,3 +1,7 @@
+<% content_for :navbar_title do %>
+<h1>My Profile</h1>
+<% end %>
+
 <div class="card-user-info">
   <img class="avatar-large" id="user-avatar" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
   <h2><%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
