@@ -17,7 +17,7 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
-    <% unless params[:controller] == 'pages' && params[:action] == 'home' %>
+    <% if content_for?(:navbar_title) || content_for?(:navbar_icons)  %>
       <div class="app-container">
         <%= yield %>
       </div>

@@ -1,17 +1,10 @@
 <%# TOP BAR %>
-<% unless params[:controller] == "pages" && params[:action] == "home" %>
+<% if content_for?(:navbar_title) || content_for?(:navbar_icons) %>
 
   <nav class="topbar fixed-top topbar-light">
 
     <%= content_for :navbar_title %>
     <div> <%= content_for :navbar_icons %></div>
-    <% if params[:controller] == "services" && params[:action] == "show" %>
-      <div class="topbar-icons">
-        <i class="fa-regular fa-share-from-square topbar-share"></i>
-        <i class="fa-regular fa-heart topbar-heart"></i>
-      </div>
-    <% end %>
-
   </nav>
 <% end %>
 
