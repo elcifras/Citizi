@@ -38,4 +38,4 @@ export default class extends Controller {
 //         this.element.outerHTML = data.inserted_item
 //       })
 //   }
-// }
+}

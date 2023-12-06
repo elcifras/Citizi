@@ -18,7 +18,8 @@
         <div class="card-footer">
           <span class="call-to-action">
             <i class="fa-regular fa-comments"></i>
-            <i class="fa-solid fa-share"></i>
+            <!-- <i class="fa-solid fa-share"></i> -->
+            <%= render "qr_code" %>
             <%= link_to booking_path(booking), data: { turbo_method: :patch, turbo_confirm: "Do you want to cancel your booking?" } do %>
             <i class="fa-solid fa-trash-can"></i>
             <% end %>
