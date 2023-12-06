@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   
   resources :services, only: [:index, :show] do
+    resources :favourites, only: [:create, :destroy]
     resources :chatrooms, only: :create
     resources :bookings, only: [:create]
   end

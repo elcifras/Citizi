@@ -6,74 +6,54 @@
       placeholder: "Search for a service..."
     %>
   <% end %>
+<% end %>
 
-
-  <%= content_for :navbar_icons do %>
-    <label class="toggle">
-      <input class="toggle-input" data-action="click->map-toggle#fire" type="checkbox" />
-      <span class="toggle-label"></span>
-      <span class="toggle-handle"></span>
-      <div class="toggle-icons-container">
-        <i class="fa-solid fa-list"></i>
-        <i class="fa-solid fa-location-dot"></i>
-      </div>
-    </label>
-  <% end %>
-  <% end %>
-
-  <div class="service-container mt-3">
-    <div class="sort-by">
-      <div class="sort-by-buttons justify-content-start">
-        <%= link_to 'Price', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
-        <%= link_to 'Distance', services_path(sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
-        <%= link_to 'Rating', services_path(sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1 sort-link' %>
-      </div>
+<%= content_for :navbar_icons do %>
+  <label class="toggle">
+    <input class="toggle-input" data-action="click->map-toggle#fire" type="checkbox" />
+    <span class="toggle-label"></span>
+    <span class="toggle-handle"></span>
+    <div class="toggle-icons-container">
+      <i class="fa-solid fa-list"></i>
+      <i class="fa-solid fa-location-dot"></i>
     </div>
+  </label>
+<% end %>
 
-    <div class="service-list-map-container">
-      <div class="card-services" data-map-toggle-target="list">
-        <% @services.each do |service| %>
-          <div class="card card-service">
-            <%= link_to service_path(service), style: "text-decoration: none;", class: "card-service-link" do %>
-              <% if service.photos.attached? %>
-                <%= cl_image_tag service.photos.first.key, class: "card-img-top" %>
-              <% end %>
-              <div class="card-body body-service">
-                <div class="service-main-info d-flex align-items-start justify-content-between">
-                  <h5 class="card-title"><%= service.user.hotel_name %></h5>
-                    <span class="button-2">
-                      <%="#{service.price.to_i}€"%>
-                    </span>
-                  </div>
-                <div class="card-subcategory-address">
-                  <p class="card-text"><%= service.sub_category.name %></p>
-                  <p class="card-text"><%= service.user.address %></p>
-                </div>
-              </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="services-map slide-right" style="width: 100vw;"; data-map-toggle-target="map">
-        <div style="width: 100vw; height: 100vh;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
-
+<div class="service-container mt-3">
+  <div class="sort-by">
+    <div class="sort-by-buttons justify-content-start">
+      <%= link_to 'Price', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
+      <%= link_to 'Distance', services_path(sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
+      <%= link_to 'Rating', services_path(sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
     </div>
   </div>
+
+  <div class="service-list-map-container">
+    <div class="card-services" data-map-toggle-target="list">
+      <% @services.each do |service| %>
+        <%= render partial: "service", locals: { service: service } %>
+      <% end %>
+        </div>
+    </div>
+  </div>
+
+  <div class="services-map slide-right" style="width: 100vw;" data-map-toggle-target="map">
+    <div style="width: 100vw; height: 100vh;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
+
 <%# Cloudinary %>
 <%# BELOW IS FOR THE SERVICES CONTROLLER, USING AJAX %>
 <%#
   if params[:sort_by] == "price"
-      @services = @services.order(params[:sort_by])
+    @services = @services.order(params[:sort_by])
   elsif params[:sort_by] == "distance"
-
-  end %>
+    # Handle sorting by distance
+  end
+%>
 <%# "/services?sort_by=price" %>
