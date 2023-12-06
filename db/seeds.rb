@@ -1,4 +1,6 @@
 require "open-uri"
+Message.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 Review.destroy_all
 Timeslot.destroy_all
@@ -18,7 +20,6 @@ Service.destroy_all
 #   password: '123456',
 #   phone_number: 621 266 668
 # )
-
 
 user1 = User.create!(
   first_name: 'Alice',
@@ -225,6 +226,34 @@ user15 = User.create!(
   latitude: 41.3945375,
   longitude: 2.1632263,
   password: 'password15',
+  phone_number: '655-111-444'
+)
+
+user16 = User.create!(
+  first_name: 'Paulo',
+  last_name: 'Sanchez',
+  hotel_name: "",
+  email: 'p.sanchez@gmail.com',
+  is_hotel: false,
+  bio: "I am a digital nomad, I live in Barcelona and I love to work in co-working spaces where I can meet new people.",
+  address: 'Gran Via de les Corts Catalanes, 606, 08007 Barcelona',
+  latitude: 41.387140,
+  longitude: 2.165790,
+  password: '123456',
+  phone_number: '655-111-444'
+)
+
+user17 = User.create!(
+  first_name: 'Gonzalo',
+  last_name: 'Garcia',
+  hotel_name: "",
+  email: 'g.garcia@gmail.com',
+  is_hotel: false,
+  bio: "I am a digital nomad, I live in Barcelona and I love to work in co-working spaces where I can meet new people.",
+  address: 'Gran Via de les Corts Catalanes, 606, 08007 Barcelona',
+  latitude: 41.387140,
+  longitude: 2.165790,
+  password: '123456',
   phone_number: '655-111-444'
 )
 
@@ -623,9 +652,105 @@ end
   timeslot: Timeslot.all.sample,
   status: "Confirmed"
 )
-day_2 += 1
+  day_2 += 1
+end
 
+day_3 = 10
+3.times do
+  Booking.create!(
+  occurs_on: DateTime.new(2023, 11, day, 18, 30, 0),
+  user_id: user3.id,
+  timeslot: Timeslot.where(service: service1).sample, #for service1
+  status: "Confirmed"
+)
+  day += 1
+end
+
+day_4 = 10
+3.times do
+  Booking.create!(
+  occurs_on: DateTime.new(2023, 11, day, 18, 30, 0),
+  user_id: user3.id,
+  timeslot: Timeslot.where(service: service6).sample, #for service6
+  status: "Confirmed"
+)
+  day += 1
 end
 
 
+
+day_5 = 10
+3.times do
+  Booking.create!(
+  occurs_on: DateTime.new(2023, 11, day, 18, 30, 0),
+  user_id: user3.id,
+  timeslot: Timeslot.where(service: service16).sample, #for service16
+  status: "Confirmed"
+)
+  day += 1
+end
+
+
+
+
+# Swimming pool for user4 and
+review1 = Review.create!(
+  comment: "Totally clean, huge and perfect temperature.",
+  rating: "4",
+  answer: "",
+  booking_id: user3.bookings.where(timeslot:Timeslot.where(service: service1)).first.id
+)
+
+review2 = Review.create!(
+  comment: "Very good pool in the city",
+  rating: "3",
+  answer: "",
+  booking_id: user3.bookings.where(timeslot:Timeslot.where(service: service1)).first.id
+)
+
+review3 = Review.create!(
+  comment: "One of the best swimming pools I have visited",
+  rating: "5",
+  answer: "",
+  booking_id:user3.bookings.where(timeslot:Timeslot.where(service: service1)).first.id
+)
+
+# Fitness Center for user8
+review4 = Review.create!(
+  comment: "High end equipment",
+  rating: "4",
+  answer: "",
+  booking_id: user3.bookings.where(timeslot:Timeslot.where(service: service6)).first.id
+)
+
+review5 = Review.create!(
+  comment: "Neat space, professional people, value for money. Highly recommended.",
+  rating: "5",
+  answer: "",
+  booking_id: user3.bookings.where(timeslot:Timeslot.where(service: service6)).first.id
+)
+
+# Co-working space for user4
+review6 = Review.create!(
+  comment: "Been working here for a couple of times, love the space.",
+  rating: "4",
+  answer: "",
+  booking_id: user3.bookings.where(timeslot:Timeslot.where(service: service16)).first.id
+)
+
+review7 = Review.create!(
+  comment: "Great coworking space in the heart of Barcelona!",
+  rating: "3",
+  answer: "",
+  booking_id: user3.bookings.where(timeslot:Timeslot.where(service: service16)).first.id
+)
+
+review8 = Review.create!(
+  comment: "Very friendly coworking space with a pool on the rooftop. I like it ",
+  rating: "4",
+  answer: "",
+  booking_id: user3.bookings.where(timeslot:Timeslot.where(service: service16)).first.id
+)
+
+puts "created reviews"
 

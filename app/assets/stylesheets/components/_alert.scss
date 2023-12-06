@@ -4,3 +4,51 @@
   right: 16px;
   z-index: 1000;
 }
+
+.modal-open{
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.modal-close{
+  display: none !important;
+}
+
+.qr-modal {
+  color: white;
+
+  .modal-body {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 45px;
+  }
+}
+
+
+.modal-content {
+  position: relative;
+  bottom: -213px;
+  left: 7px;
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  background-color: $dark-blue;
+  color: white;
+  outline: 0;
+}
+
+.btn-close {
+  color: white !important;
+  filter: invert(1);
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--bs-modal-header-padding);
+  border-bottom: none !important;
+  border-top-left-radius: var(--bs-modal-inner-border-radius);
+  border-top-right-radius: var(--bs-modal-inner-border-radius);
+}

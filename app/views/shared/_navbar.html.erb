@@ -1,17 +1,12 @@
 <%# TOP BAR %>
-<% unless (params[:controller] == "pages" && params[:action] == "home") || (params[:controller] == "users" && params[:action] == "edit") %>
+
+<% if content_for?(:navbar_title) || content_for?(:navbar_icons) %>
+
 
   <nav class="topbar fixed-top topbar-light">
 
     <%= content_for :navbar_title %>
     <div> <%= content_for :navbar_icons %></div>
-    <% if params[:controller] == "services" && params[:action] == "show" %>
-      <div class="topbar-icons">
-        <i class="fa-regular fa-share-from-square topbar-share"></i>
-        <i class="fa-regular fa-heart topbar-heart"></i>
-      </div>
-    <% end %>
-
   </nav>
 <% end %>
 
@@ -34,10 +29,10 @@
     <i class="fa-solid fa-calendar-days navbar-icon"></i>
   <% end %>
 
-  <%# PATH NEEDED FOR PROFILE/USERS ID HERE %>
   <%= link_to edit_user_registration_path(current_user), class: "nav-link" do %>
     <i class="fa-solid fa-user navbar-icon"></i>
   <% end %>
+
   <%# Additional icons for services/show page %>
 
 </nav>

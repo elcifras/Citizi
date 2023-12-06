@@ -14,6 +14,10 @@ class User < ApplicationRecord
   has_many :chatrooms_as_hotel, through: :services, source: :chatrooms
   has_one_attached :avatar
 
+  has_many :messages
+  has_many :chatrooms
+  has_many :favourites, dependent: :destroy
+
 
   scope :is_hotel, -> { where(is_hotel: true) }
 

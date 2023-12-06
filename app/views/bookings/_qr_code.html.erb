@@ -1,0 +1,23 @@
+
+
+<i class="fa-solid fa-qrcode" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+<!-- Modal -->
+<div class="modal qr-modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <% qr = RQRCode::QRCode.new("http://github.com/") %>
+            <%= qr.as_svg(
+            color: "fff",
+            shape_rendering: "crispEdges",
+            module_size: 6,
+            standalone: true,
+            use_path: true
+          ).html_safe %>
+      </div>
+    </div>
+  </div>
+</div>

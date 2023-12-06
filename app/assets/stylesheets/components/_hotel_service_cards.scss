@@ -8,6 +8,21 @@
   padding: 15px 24px;
   border-radius: 11px;
   color: $light-gray;
+  cursor: pointer;
+  width: 100%; /* Make the container full-width */
+  justify-content: space-between; /* Change to space-between for equal spacing */
+}
+
+.button-1-sort-link {
+  flex-grow: 1; /* Allow the buttons to grow and take equal width */
+  margin: 0 5px; /* Add some spacing between the buttons */
+  border: 2px solid $dark-blue;
+  -webkit-text-decoration: bold;
+  text-decoration: bold;
+  font-size: small;
+  padding: 4px 20px;
+  border-radius: 11px;
+  background-color: $dark-blue;
 }
 
 // Each individual service card
@@ -167,6 +182,8 @@
   position: relative;
 }
 
+
+
 .services-map {
   top: 160px;
   position: fixed;
@@ -185,8 +202,28 @@
 .slide-left {
   transform: translateX(-100vw);
 }
+
+//Favourites
+.service-fav-icon {
+  font-size: 32px;
+  position: absolute;
+  top: 28px;
+  right: 33px;
+  color: $orange;
+  &:hover {
+    transform: scale(1.1);
+  }
+  z-index: 3;
+}
+
+.service-card-favorite-wrapper {
+  position: relative;
+}
+
+
 // SHOW PAGE
 .floating-chat-icon {
+  border: none;
   position: fixed;
   bottom: 75px;
   right: 25px;
