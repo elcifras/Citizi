@@ -1,6 +1,5 @@
 .button-1 {
   border: 2px solid $dark-blue;
-  -webkit-text-decoration: bold;
   text-decoration: bold;
   font-size: small;
   padding: 4px 20px;
@@ -25,7 +24,6 @@
   color: $orange;
   font-size: small;
   background-color: rgba(60, 60, 67, 0.47); /* Red with 47% opacity */
-  -webkit-text-decoration: bold;
   text-decoration: bold;
   font-size: small;
   padding: 4px 20px;
@@ -37,7 +35,6 @@
 
 .book-now {
   border: 2px solid $orange; /* Darken the orange by 10% */
-  -webkit-text-decoration: bold;
   text-decoration: bold;
   font-size: small;
   padding: 4px 20px;
