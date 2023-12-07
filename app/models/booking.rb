@@ -7,4 +7,8 @@ class Booking < ApplicationRecord
 
   STATUS = ["Confirmed", "Completed", "Cancelled", "Pending", "On-going"].freeze
   DURATION = [60, 90, 120, 180, 240, 480].freeze
+
+  def chatroom
+    Chatroom.find_by(service: service, user: user)
+  end
 end
