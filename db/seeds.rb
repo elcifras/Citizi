@@ -1,4 +1,5 @@
 require "open-uri"
+Favourite.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Message.destroy_all
