@@ -22,8 +22,10 @@
           <span class="call-to-action">
             <% if booking.chatroom.blank? %>
                 <%= link_to service_chatrooms_path(booking.service), data: { turbo_method: :post} do %>
+                  <div class="icon-flex">
                   <i class="fa-regular fa-comments"></i>
-                  <span>chat</span>
+                  <p id="icon-title">Chat</p>
+                  </div>
                 <% end %>
               <% else %>
                 <%= link_to chatroom_path(booking.chatroom) do %>

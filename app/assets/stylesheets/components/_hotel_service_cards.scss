@@ -13,6 +13,7 @@
   color: $light-gray;
   cursor: pointer;
   width: 100%;
+  gap: 6px;
 }
 
 .button-2.button-sort {
@@ -63,6 +64,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  
 }
 
 .body-service-reviews {
