@@ -2,7 +2,6 @@
 
 // Sort by
 .sort-by-buttons {
-  display: flex-start;
   justify-content: space-evenly;
   align-items: center;
   padding: 15px 24px;
@@ -10,18 +9,17 @@
   color: $light-gray;
   cursor: pointer;
   width: 100%; /* Make the container full-width */
-  justify-content: space-between; /* Change to space-between for equal spacing */
 }
 
 .button-1-sort-link {
-  flex-grow: 1; /* Allow the buttons to grow and take equal width */
-  margin: 0 5px; /* Add some spacing between the buttons */
-  border: 2px solid $dark-blue;
-  text-decoration: bold;
-  font-size: small;
-  padding: 4px 20px;
+  margin: 0px;
+  font-size: 17px;
+  padding: 4px 13px;
   border-radius: 11px;
   background-color: $dark-blue;
+  cursor: pointer;
+  background-color: rgba(60, 60, 67, 0.47); /* Red with 47% opacity */
+  color: $dark-blue;
 }
 
 // Each individual service card
@@ -180,7 +178,6 @@
 .service-list-map-container {
   position: relative;
 }
-
 
 
 .services-map {
