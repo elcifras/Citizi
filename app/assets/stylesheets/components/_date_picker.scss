@@ -1,5 +1,7 @@
 // Use the flatpickr-mobile class because we are on mobile
 .flatpickr-mobile {
+  height: 50px;
+  font-size: 15px !important;
   // Use the :not() pseudo-class with the :placeholder-shown pseudo-class
   // to display an ::after pseudo-element with the placeholder attribute as content
   &:before {
