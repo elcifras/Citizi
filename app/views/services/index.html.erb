@@ -26,7 +26,8 @@
     <%= link_to 'Price', services_path(query: params[:query], sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
     <%= link_to 'Distance', services_path(query: params[:query], sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
     <%= link_to 'Rating', services_path(query: params[:query], sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-  </div>
+
+</div>
 
   <div class="service-list-map-container">
     <div class="card-services" data-map-toggle-target="list">

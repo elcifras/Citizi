@@ -5,6 +5,7 @@ export default class extends Controller {
   }
 
   addFavourite(event) {
+    console.log("addFavourite")
     event.preventDefault()
     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     const favouriteButton = event.currentTarget
@@ -22,6 +23,8 @@ export default class extends Controller {
   }
 
   deleteFavourite(event) {
+    console.log("addFavourite")
+
     event.preventDefault()
     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     const favouriteButton = event.currentTarget

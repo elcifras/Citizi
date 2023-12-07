@@ -13,7 +13,6 @@
   color: $light-gray;
   cursor: pointer;
   width: 100%;
-/* Change to space-between for equal spacing */
 }
 
 .button-2.button-sort {
@@ -28,8 +27,23 @@
   text-decoration: bold;
   font-size: 15px;
   padding: 4px 20px;
+}
+
+.button-1-sort-link {
+  margin: 0px;
+  font-size: 17px;
+  padding: 4px 13px;
   border-radius: 11px;
   background-color: $dark-blue;
+}
+
+.button-1-sort-link-cicked {
+  background-color: $white;
+  margin: 0px;
+  font-size: 17px;
+  padding: 4px 13px;
+  border-radius: 11px;
+  color: $orange;
 }
 
 // Each individual service card
@@ -141,6 +155,10 @@
 }
 .toggle-input:checked~.toggle-icons-container .fa-location-dot {
   color: $orange;
+}
+
+.fa-list {
+  padding-top: 2px;
 }
 
 .toggle-handle {
