@@ -20,6 +20,15 @@
   background-color: $dark-blue;
 }
 
+.button-1-sort-link-cicked {
+  background-color: $white;
+  margin: 0px;
+  font-size: 17px;
+  padding: 4px 13px;
+  border-radius: 11px;
+  color: $orange;
+}
+
 // Each individual service card
 .card-service {
   margin: 20px;

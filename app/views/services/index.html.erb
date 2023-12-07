@@ -14,7 +14,7 @@
     <span class="toggle-label"></span>
     <span class="toggle-handle"></span>
     <div class="toggle-icons-container">
-      <i class="fa-solid fa-list"></i>
+      <i cx
       <i class="fa-solid fa-location-dot"></i>
     </div>
   </label>
@@ -24,8 +24,8 @@
   <div class="sort-by">
     <div class="sort-by-buttons">
       <%= link_to 'Sort by', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-      <%= link_to 'Price', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-      <%= link_to 'Distance', services_path(sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
+      <%= link_to 'Price', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: params[:sort_by] && params[:sort_by] == "price" ? "button-1-sort-link-clicked" : "button-1-sort-link" %>
+      <%= link_to 'Distance', services_path(sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: params[:sort_by] && params[:sort_by] == "distance" ? "button-1-sort-link-clicked" : "button-1-sort-link" %>
       <%= link_to 'Rating', services_path(sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: params[:sort_by] && params[:sort_by] == "rating" ? "button-1-sort-link-clicked" : "button-1-sort-link" %>
     </div>
   </div>
