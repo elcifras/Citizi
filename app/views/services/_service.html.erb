@@ -1,4 +1,4 @@
-<div class="service-card-favorite-wrapper">
+<div class="service-card-favorite-wrapper" data-controller="favourites">
   <% if current_user && current_user.favourites.reload.pluck(:service_id).include?(service.id) %>
     <% user_favourite_service = current_user.favourites.find_by(service_id: service.id) %>
     <%= link_to '<i class="fa-solid service-fav-icon fa-heart fa-xl"></i>'.html_safe, favourite_path(user_favourite_service), data:{ turbo_method: :delete, service_id: service.id, action: 'click->favourites#deleteFavourite'} %>
