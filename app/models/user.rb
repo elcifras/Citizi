@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :services, dependent: :destroy
   has_many :timeslots, through: :services
   has_many :accepted_bookings, through: :timeslots, source: :booking
-  has_many :reviews, through: :bookings
+  has_many :reviews, through: :bookings, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :chatrooms, dependent: :destroy
   has_many :chatrooms_as_hotel, through: :services, source: :chatrooms
