@@ -3,7 +3,7 @@
       <path d="M0 100 Q 10 50 100 50 V 0 H 0 Z" fill="overlayColor"></path>
     </svg>
     <div class="inside-div">
-      <div class="head">
+      <div class="head-home">
       </div>
 
       <h1 class="title">Citizi</h1>
@@ -21,24 +21,22 @@
         </div>
       </div>
 
-      <p>Set your location</p>
-        <%= text_field_tag :address,
-            params[:address],
-            class: "form-control",
-            placeholder: "Barcelona"
-        %>
-
-      <p>Search for a service</p>
-      <%= form_with url: services_path, method: :get, class: "d-flex text_and_icon flex-container item-flex" do %>
-        <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Massage"
-        %>
-
-      <%= button_tag(type: "submit", name: "search", class: "button-1 orange") do %>
-        <%= content_tag(:i, "Search",) %>
+      <div class="form-home">
+        <%= form_with url: services_path, method: :get, class: "d-flex text_and_icon flex-container item-flex" do %>
+          <%= text_field_tag :address,
+              params[:address],
+              class: "form-control",
+              placeholder: "Set your location", label: "Set your location"
+          %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search for a service", label: "Search for a service"
+          %>
+        <%= button_tag(type: "submit", name: "search", class: "orange") do %>
+          <%= content_tag(:i, "Search",) %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

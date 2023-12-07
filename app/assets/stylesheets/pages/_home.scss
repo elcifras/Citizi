@@ -14,7 +14,7 @@
 .homepage {
   background-size: cover;
   background-position: center;
-  margin: 20px
+  padding: 20px;
 }
 
 .inside-div {
@@ -48,7 +48,7 @@
 
 .title {
   font-weight: bold;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 1px;
   font-size: 100px;
   text-align: center;
@@ -57,7 +57,7 @@
 .sub-title {
   color: #FFF;
   font-family: Jost;
-  font-size: 20px;
+  font-size: 19px;
   font-style: normal;
   line-height: normal;
   text-align: center;
@@ -69,7 +69,7 @@
   color: $orange;
   font-family: 'Bad Script', cursive;
   font-size: 42px;
-  margin-top: -13px;
+  margin-top: 15px;
 }
 
 .head {
@@ -80,6 +80,14 @@
     text-align: center;
 }
 
+.head-home {
+  box-sizing: content-box;
+  margin: 0 auto 20px auto;
+  width: 70%;
+  padding-top: 20px;
+  text-align: center;
+}
+
 .flex-container {
   padding-left: 25px;
   display: flex;
@@ -88,6 +96,7 @@
   width: auto;
   height: 54px;
   color: $dark-blue;
+  flex-direction: column;
 }
 
 .form-control {
@@ -95,10 +104,17 @@
   border: none;
   font-size: 11px;
   margin-right: 10px;
+  margin-top: 10px;
 }
 
 #query {
   color: $dark-blue;
+  width: 250px;
+}
+
+#address {
+  width: 250px;
+  margin-bottom: 10px;
 }
 
 .form-control::placeholder {
@@ -120,4 +136,17 @@
   border-radius: 11px;
   background: $orange;
   color:$white;
+  margin-top: 15px;
+  -webkit-text-decoration: bold;
+  text-decoration: bold;
+  font-size: large;
+  padding: 4px 20px;
+  border-radius: 11px;
+  box-shadow: none !important;
+  border: none !important;
+  i {
+    font-style: normal;
+    font-family: $headers-font;
+    font-weight: bold;
+  }
 }

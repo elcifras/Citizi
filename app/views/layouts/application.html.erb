@@ -14,7 +14,9 @@
   </head>
 
   <body data-controller="map-toggle">
+    <% unless params[:action] == "home" %>
     <%= render "shared/navbar" %>
+    <% end %>
     <%= render "shared/flashes" %>
 
     <% if content_for?(:navbar_title) || content_for?(:navbar_icons)  %>
