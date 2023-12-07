@@ -1,10 +1,10 @@
 require "open-uri"
+Review.destroy_all
+Booking.destroy_all
 Message.destroy_all
 Chatroom.destroy_all
 User.destroy_all
-Review.destroy_all
 Timeslot.destroy_all
-Booking.destroy_all
 Category.destroy_all
 SubCategory.destroy_all
 Service.destroy_all
@@ -690,9 +690,6 @@ day_5 = 10
   day += 1
 end
 
-
-
-
 # Swimming pool for user4 and
 review1 = Review.create!(
   comment: "Totally clean, huge and perfect temperature.",
@@ -753,4 +750,3 @@ review8 = Review.create!(
 )
 
 puts "created reviews"
-
