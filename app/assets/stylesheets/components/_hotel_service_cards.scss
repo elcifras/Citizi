@@ -2,13 +2,14 @@
 
 // Sort by
 .sort-by-buttons {
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 15px 24px;
   border-radius: 11px;
   color: $light-gray;
   cursor: pointer;
-  width: 100%; /* Make the container full-width */
+  width: 100%;
+  display: flex;
 }
 
 .button-1-sort-link {
@@ -17,9 +18,6 @@
   padding: 4px 13px;
   border-radius: 11px;
   background-color: $dark-blue;
-  cursor: pointer;
-  background-color: rgba(60, 60, 67, 0.47); /* Red with 47% opacity */
-  color: $dark-blue;
 }
 
 // Each individual service card
@@ -132,6 +130,10 @@
 }
 .toggle-input:checked~.toggle-icons-container .fa-location-dot {
   color: $orange;
+}
+
+.fa-list {
+  padding-top: 2px;
 }
 
 .toggle-handle {
