@@ -8,7 +8,7 @@
     <h2 class="hotel-name"><%= service.user.hotel_name %></h2>
     <div class="hotel-descrip">
       <p><%= service.sub_category.name %></p>
-      <p class="card-hotel-rating"><i class="fa-regular fa-star"></i> <%= service.reviews.average(:rating).round(1) %></p>
+      <p class="card-hotel-rating"><i class="fa-regular fa-star"></i> <%= service.reviews.average(:rating) %></p>
 
     </div>
   </div>
