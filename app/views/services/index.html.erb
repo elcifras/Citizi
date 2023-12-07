@@ -20,13 +20,12 @@
   </label>
 <% end %>
 
-<div class="service-container mt-3">
-  <div class="sort-by">
-    <div class="sort-by-buttons justify-content-start">
-      <%= link_to 'Price', services_path(sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-      <%= link_to 'Distance', services_path(sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-      <%= link_to 'Rating', services_path(sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-    </div>
+<div class="service-container mt-5">
+  <div class="sort-by-buttons">
+    <i class="fa-solid fa-sort button-2 button-sort me-3"></i>
+    <%= link_to 'Price', services_path(query: params[:query], sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
+    <%= link_to 'Distance', services_path(query: params[:query], sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
+    <%= link_to 'Rating', services_path(query: params[:query], sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
   </div>
 
   <div class="service-list-map-container">

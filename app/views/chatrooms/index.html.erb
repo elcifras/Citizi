@@ -12,7 +12,7 @@
             <% if empty.service.user.avatar.attached? %>
               <%= cl_image_tag empty.service.user.avatar.key, width: 80, height: 80 %>
             <% else %>
-              <i class="fa fa-person"></i>
+              <i class="fa-regular fa-user"></i>
             <% end %>
           </div>
            <div class="hotel-name"><strong><%= empty.service.user.hotel_name %></strong></div>
@@ -31,7 +31,7 @@
               <% if other_user.is_hotel && other_user.avatar.attached? %>
                 <%= cl_image_tag other_user.avatar.key, width: 80, height: 80  %>
               <% else %>
-                <i class="fa fa-person"></i>
+                <i class="fa-regular fa-user"></i>
               <% end %>
             </div>
             <div class="hotel-name w-50">
