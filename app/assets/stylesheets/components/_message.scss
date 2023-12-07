@@ -15,10 +15,11 @@
 }
 
 .sender-style {
-  background-color: lightcoral;
+  background-color: $dark-blue;
+  filter: drop-shadow(2px 2px 8px #202834);
 }
 
 .receiver-style {
-  background-color: lightblue;
-  
+  background-color: $orange;
+  filter: drop-shadow(2px 2px 8px #202834);  
 }

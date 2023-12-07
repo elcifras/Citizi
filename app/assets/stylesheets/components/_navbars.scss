@@ -9,6 +9,8 @@
   width: 100vw;
   padding: 16px 24px;
   margin-bottom: 10px;
+  align-items: center;
+  filter: drop-shadow(2px 2px 8px #202834);
 }
 
 .topbar-arrow {
@@ -44,7 +46,7 @@
   background: $dark-blue;
   width: 100vw;
   padding: 16px 24px;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.8);
+  filter: drop-shadow(0px -10px 15px #202834);
 }
 
 .nav-link {
