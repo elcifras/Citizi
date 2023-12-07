@@ -4,7 +4,9 @@
     <div class="card-body">
       <div class="top-body-info">
         <div class="title-price-container">
-          <h5 class="card-title"><%= booking.service.user.hotel_name %></h5>
+            <%= link_to service_path(booking.service) do %>
+             <h5 class="card-title"><%= booking.service.user.hotel_name %></h5>
+            <% end %>
           <span class="button-2">
           </i><%= "#{booking.service.price.to_i} €" %>
           </span>
@@ -12,16 +14,32 @@
             <div class="service-main-info">
               <div class="service-name"><%= booking.service.sub_category.name %></div>
               <div class="date-time"><%= booking.occurs_on.strftime("%A, %B %e, %Y") %></div>
+              <div class="date-time"><%= booking.timeslot.start_at.strftime("%l:%M %P") %></div>
             </div>
         </div>
   <div class="div-line"></div>
         <div class="card-footer">
           <span class="call-to-action">
-            <i class="fa-regular fa-comments"></i>
+            <% if booking.chatroom.blank? %>
+                <%= link_to service_chatrooms_path(booking.service), data: { turbo_method: :post} do %>
+                  <i class="fa-regular fa-comments"></i>
+                  <span>chat</span>
+                <% end %>
+              <% else %>
+                <%= link_to chatroom_path(booking.chatroom) do %>
+                  <div class="icon-flex">
+                  <i class="fa-regular fa-comments"></i>
+                  <p id="icon-title">Chat</p>
+                  </div>
+                <% end %>
+            <% end %>
             <!-- <i class="fa-solid fa-share"></i> -->
             <%= render "qr_code" %>
             <%= link_to booking_path(booking), data: { turbo_method: :patch, turbo_confirm: "Do you want to cancel your booking?" } do %>
+            <div class="icon-flex">
             <i class="fa-solid fa-trash-can"></i>
+            <p id="icon-title">Cancel</p>
+            </div>
             <% end %>
           </span>
         </div>

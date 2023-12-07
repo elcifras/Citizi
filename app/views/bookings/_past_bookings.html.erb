@@ -12,16 +12,18 @@
         <div class="service-main-info">
           <div class="service-name"><%= booking.service.sub_category.name %></div>
           <div class="date-time"><%= booking.occurs_on.strftime("%A, %B %e, %Y") %></div>
+          <div class="date-time"><%= booking.timeslot.start_at.strftime("%l:%M %P") %></div>
         </div>
       </div>
-  <div class="div-line"></div>
+  <div class="div-line" id="review-bottom-margin"></div>
     <div class="card-footer">
-      <span class="call-to-action">
+      <span class="call-to-action review-centered" >
+        <div class="icon-flex">
         <%= link_to new_booking_review_path(booking) do %>
-        <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <p id="icon-title">Leave a review</p>
+        </div>
         <% end %>
-        <i class="fa-regular fa-comments"></i>
-        <i class="fa-solid fa-share"></i>
       </span>
     </div>
   </div>
