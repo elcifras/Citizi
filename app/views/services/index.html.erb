@@ -23,9 +23,9 @@
 <div class="service-container mt-5">
   <div class="sort-by-buttons">
     <i class="fa-solid fa-sort button-2 button-sort me-3"></i>
-    <%= link_to 'Price', services_path(query: params[:query], sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-    <%= link_to 'Distance', services_path(query: params[:query], sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
-    <%= link_to 'Rating', services_path(query: params[:query], sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: 'button-1-sort-link' %>
+    <%= link_to 'Price', services_path(query: params[:query], sort_by: 'price', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: params[:sort_by] && params[:sort_by] == "price" ? "button-1-sort-link-clicked" : "button-1-sort-link" %>
+    <%= link_to 'Distance', services_path(query: params[:query], sort_by: 'distance', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: params[:sort_by] && params[:sort_by] == "distance" ? "button-1-sort-link-clicked" : "button-1-sort-link" %>
+    <%= link_to 'Rating', services_path(query: params[:query], sort_by: 'rating', sort_direction: params[:sort_direction] == 'asc' ? 'desc' : 'asc'), class: params[:sort_by] && params[:sort_by] == "rating" ? "button-1-sort-link-clicked" : "button-1-sort-link" %>
 
 </div>
 

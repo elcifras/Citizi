@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
       @booking.occurs_on ||= @booking.timeslot.start_at
       @booking.status = "Confirmed"
       if @booking.save
-        redirect_to bookings_path, notice: "Booking created"
+        redirect_to bookings_path
       else
         redirect_to service_path(@service), notice: "Problem booking"
       end
