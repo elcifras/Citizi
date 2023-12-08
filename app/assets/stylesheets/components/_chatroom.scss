@@ -7,6 +7,7 @@
   justify-content: space-between;
   flex-grow: 1;
   gap: 10px;
+  margin-bottom: 90px;
 
   h1 {
 
@@ -27,11 +28,19 @@
     padding: 1rem;
     gap: 10px;
     font-size: medium;
+    position: fixed;
+    bottom: 50px;
+    width: 92%;
+    background-color: #3E4C60;
 
     .form-group {
       margin-bottom: 0;
     }
   }
+}
+
+#message_content {
+  margin-top: 0px;
 }
 
 // .chatroom-container {

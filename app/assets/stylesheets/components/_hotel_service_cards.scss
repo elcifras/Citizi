@@ -1,5 +1,10 @@
 // INDEX, SERVICES PAGE
 
+.show-service-container {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
 // Sort by
 .sort-by-buttons {
   display: flex;
@@ -64,7 +69,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  
+
 }
 
 .body-service-reviews {

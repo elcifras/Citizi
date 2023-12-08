@@ -70,7 +70,7 @@ user3 =User.create!(
 user4 = User.create!(
   first_name: 'Diana',
   last_name: 'Johnson',
-  hotel_name: "Claris Hotel & Spa GL",
+  hotel_name: "Claris Hotel & Spa",
   email: 'diana@hotelgl.com',
   is_hotel: true,
   bio: "Located just off Barcelona’s prestigious Passeig de Gràcia Boulevard, this luxury hotel offers city views from its rooftop pool. It also has a unique art collection",

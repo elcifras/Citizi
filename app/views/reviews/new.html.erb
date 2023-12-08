@@ -1,3 +1,7 @@
+<% content_for :navbar_title do %>
+<h1 class="text-center w-100 mt-2">Leave A Review</h1>
+<% end %>
+
 <div class="booking-container mt-3">
 <div class="review-card mt-3">
   <%= cl_image_tag @booking.service.photos.first.key, class: "booking-card-img" %>
