@@ -5,6 +5,11 @@
   z-index: 1000;
 }
 
+.alert-info {
+  background-color: $blue;
+  color: $white;
+}
+
 .modal-open{
   display: block !important;
   opacity: 1 !important;
